@@ -1,0 +1,104 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar class="headerToolbar">
+    <ion-title>
+        <div class="palanceText"> {{balanceServse}} </div>
+        <div class="palancePoints">{{points}}</div>
+        
+    </ion-title>
+    <ion-buttons slot="start">
+       <div (click)="functionOpenMenue()" style="padding-left:3px;padding-right:3px"><img src="../../assets/imgs/Group871.png" style="width:28px"></div>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+    <div style="padding:20px">       
+       <div *ngIf="checkIfSendPoints == 3" style="padding-top:8px">
+            <div style="font-size:23px;text-align:center"><img src="../../assets/imgs/redCheck.png" style="width:65px"></div>
+            <div style="padding-bottom:15px; font-size:18px;color:#ff0000; text-align:center">{{alertFive}}</div>
+       </div>
+        <div *ngIf="checkIfSendPoints == 4" style="padding-top:8px">
+            <div style="font-size:23px;text-align:center"><img src="../../assets/imgs/redCheck.png" style="width:65px"></div>
+            <div style="padding-bottom:15px; font-size:18px;color:#ff0000; text-align:center">{{noBalanceCard}}</div>
+       </div>
+       <div *ngIf="checkIfSendPoints==2" style="padding-top:8px">
+            <div style="font-size:23px;text-align:center"><img src="../../assets/imgs/redCheck.png" style="width:65px"></div>
+            <div style="padding-bottom:15px; font-size:18px;color:#ff0000; text-align:center">{{sendPointFiald}}</div>
+       </div>
+        <div  *ngIf="checkIfSendPoints==1"  style="padding-top:8px">
+            <div style="font-size:23px;text-align:center"><img src="../../assets/imgs/greenCheck.png" style="width:65px"></div>
+            <div style="padding-bottom:15px; font-size:18px;color:#24b14b; text-align:center">{{sendPointSucsess}}</div>
+       </div>
+        <div *ngIf="checkIfSendPoints == 3" style="padding-top:8px">
+            <div style="font-size:23px;text-align:center"><img src="../../assets/imgs/redCheck.png" style="width:50px"></div>
+            <div style="padding-bottom:15px; font-size:15px;color:#ff0000; text-align:center">{{alertTen}}</div>
+       </div>
+       <div style="padding-bottom:15px; padding-top:10px">
+           <form style="display: contents;" (ngSubmit)="sendPointsToUser()">
+            <div class="paddingBottom">
+                <ion-item lines="none">
+                 	<span class="titleInInput">
+                       {{sendTo}}
+                    </span>
+                    <ion-input  type="text" [(ngModel)]="mobileUserInfo" [ngModelOptions]="{standalone: true}" readonly='true'></ion-input>
+                </ion-item>
+            </div>
+            <div class="paddingBottom">
+                <ion-item lines="none" class="{{errorPoints}}">
+                 	<span class="titleInInput">
+                       {{numPoint}}
+                    </span>
+                    <ion-input type="number" [(ngModel)]="pointsUser" [ngModelOptions]="{standalone: true}" (ionInput)="checkPoint($event)"></ion-input>
+                </ion-item>
+                    <div class="errorTitle" *ngIf="isErrorUserPoints == 0">{{checkPointEnter}}</div>
+            </div>
+             <div class="paddingBottom">
+                <div class="paddingData">
+                    <div class="storesImageDiv">
+                    	<img src="{{personalImage}}" class="storesImage">
+                    </div>
+                    <div style="display:inline-block;vertical-align: top;">
+                    <div>
+                        <div class="storesName">{{commercialName}}</div>
+                        <div class="catAndSubCat">{{catUserInfoId}} | {{subUserInfoCatId}}</div>
+                        <div class="cityAndRegion">{{cityUserInfoId}} | {{regionUserInfoId}}</div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+              <div class="divButtonClass">
+                <ion-button class="oneButton fontSize18" (click)="sendPointsToUser()" id="submit" disabled="{{!isdisabled}}"><span style="font-size:12px;padding-top:4px">{{sendNow}}</span></ion-button>
+              </div>
+            </div>
+            <button style="visibility:hidden" id="submit" ion-button type="submit" ></button>
+            </form>
+       </div>
+    </div>
+</ion-content>
+<div class="menueValues"><img (click)="functionGoToSendPoint()" src="../../assets/imgs/sendPoint.png" style="width:70px"></div>
+        <ion-footer class="ion-no-border">
+        <ion-toolbar class="footerToolbar">
+            <div class="width100">
+                <div class="menueClass" [ngStyle]="{'float': floatD}"  (click)="functionGoToHome()">
+                    <div><img src="../../assets/imgs/Group862.png" style="width:20px"></div>
+                     <div class="labelClass">{{menuOne}}</div>
+                </div>
+                <div class="menueClass" [ngStyle]="{'float': floatD}" (click)="functionGoInvitations()">
+                    <div><img src="../../assets/imgs/Group863.png" style="width:18px"></div>
+                    <div class="labelClass">{{menuTow}}</div>
+                </div>
+                <div class="menueClass" [ngStyle]="{'float': floatD}" (click)="functionGoToSendPoint()">
+                    <div style="height:28px"></div>
+                    <div class="labelClass" style="font-size:15px">{{menuThree}}</div>
+                </div>
+                <div class="menueClass" [ngStyle]="{'float': floatD}" (click)="functionGoToArchives()">
+                    <div><img src="../../assets/imgs/Group865.png" style="width:18px"></div>
+                    <div class="labelClass">{{menuFor}}</div>
+                </div>
+                <div class="menueClass" [ngStyle]="{'float': floatD}" (click)="functionOpenAccount()">
+                    <div><img src="../../assets/imgs/GroupSelect866.png" style="width:18px"></div>
+                   <div class="labelClass">{{menuFive}}</div>
+                </div>
+            </div>
+        </ion-toolbar>
+        </ion-footer>

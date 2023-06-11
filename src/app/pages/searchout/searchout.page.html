@@ -1,0 +1,80 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar class="headerToolbar">
+    <ion-title>
+       {{search}}
+    </ion-title>
+    <ion-buttons slot="start">
+       <div (click)="functionOpenMenue()" style="padding-left:3px;padding-right:3px"><img src="../../assets/imgs/Group871.png" style="width:28px"></div>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+<ion-refresher slot="fixed" (ionRefresh)="refrechAllPage($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+    <div style="padding:20px">
+     	<div>
+            <ion-grid>
+                <ion-row>
+                    <ion-col class="textAlignStart" size="9" style="padding:0px">
+                         <div class="catNameClass"><span style="vertical-align:text-top" (click)="functionGoToHome()"><ion-icon name="{{arrowSide}}" class="iconVal"></ion-icon></span> {{searchResult}}</div>
+                    </ion-col>
+                    <ion-col class="textAlignEnd" size="3" style="padding:0px" (click)="servicesFilter()">
+                        <div><img src="../../assets/imgs/filter.png" style="width:22px"></div>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>    
+        </div>
+       <div *ngIf="users!=0">
+           <div *ngFor="let items of returnUsersArray;let i = index">
+                <div class="storesBox">
+                    <div class="storesSubBox">
+                        <div class="storesImageDiv" [ngStyle]="{'float': floatD}" (click)="functionUserDetalis(items.id)">
+                             <img src="{{items.productsImage}}" class="storesImage">
+                        </div>
+                        <div (click)="functionUserDetalis(items.id)" style="height: 95px;">
+                            <div (click)="functionUserDetalis(items.id)">
+                                <div class="storesName">{{items.title}}</div>
+                                <div class="storesSubCatLabel">{{items.commercialName}}</div>
+                                <div class="storesTypeLabel">{{items.cityId}} | {{items.regionsId}}</div>
+                            </div>
+                        </div>
+                         <div style="margin-top:0px; margin-right:8px; margin-left:8px">
+                             <div [ngStyle]="{'float': floatD}" style="position: absolute;padding-top: 5px;">
+       							   <div class="starLabel">
+                                    <div class="star">
+                                      <div class="starBackRat" [ngStyle]="{'width': items.rate}">
+                                         <div class="starcover">
+                                          <img src="../../assets/imgs/starImage.png" style="width:15px; height:15px;max-width:15px"/>
+                                          <img src="../../assets/imgs/starImage.png" style="width:15px; height:15px;max-width:15px"/>
+                                          <img src="../../assets/imgs/starImage.png" style="width:15px; height:15px;max-width:15px"/>
+                                          <img src="../../assets/imgs/starImage.png" style="width:15px; height:15px;max-width:15px"/>
+                                          <img src="../../assets/imgs/starImage.png" style="width:15px; height:15px;max-width:15px"/>
+                                         </div>
+                                      </div>
+                                    </div>
+                                </div>
+                             </div>
+                             <div (click)="functionCallNumber(items.mobile)" class="mobileNumber" [ngStyle]="{'float': floatTow}"><img src="../../assets/imgs/callicon.png" style="width:11px"> {{items.mobileHide}}</div>
+                        </div>
+                    </div>
+                </div>
+           </div>
+       </div>
+        <div class="divEmptyVal" *ngIf="users==0">
+            <div>
+                <img src="../../assets/imgs/noData.png" style="width:150px; height:150px">
+            </div>
+            <div class="emptyFirstText">
+               {{noDataTitle}}
+            </div>
+            <div class="emptyLastText">
+                {{noDataSubTitle}}
+            </div>
+        </div>
+    </div>
+         <ion-infinite-scroll threshold="100px" (ionInfinite)="loadMoreData($event)">
+        <ion-infinite-scroll-content loadingSpinner="none">
+        </ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+</ion-content>

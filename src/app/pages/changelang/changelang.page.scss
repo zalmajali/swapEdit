@@ -1,0 +1,184 @@
+.headerToolbar{
+	--background: #e9e9ea;
+	--border-width: 0px;
+	--padding-top: 10px;
+	--padding-bottom: 5px;
+	--padding-end: 0px;
+}
+.ios ion-title {
+   position: inherit;
+   width:100%;
+   text-align:center
+}
+toolbar-container{
+	--padding-start:0px
+}
+ion-title {
+   text-align:center;
+   font-size: 17px;
+   font-weight: 600;
+   color: black;
+   margin-top:5px;
+
+}
+ion-content{
+	--background: var(--ion-color-header);
+	--padding-bottom:75px;
+}
+/*header*/
+.palanceText{
+	vertical-align: top;
+	background-color:#a19f9e;
+	font-size: 9px;
+	padding: 3px 9px 3px 8px;
+	border-radius: 5px;
+	color:#ffffff;
+	margin-top: 5px;
+	display: inline-block;
+}
+.palancePoints{
+	font-family: emoji;
+	color: #ED2224;
+	vertical-align: top;
+	font-size:23px;
+	display: inline-block;
+	padding: 0px 3px 0px 3px;
+}
+.point{
+	color: #ED2224;
+	vertical-align: top;
+	font-size:11px;
+	display: inline-block;
+}
+.classValDataAr{
+   --background: #ED2224;
+    color: var(--ion-color-wight);
+    position: fixed;
+	font-family: emoji;
+    top: 0px;
+    right: 40px;
+    --padding-top: 4px;
+    --padding-end: 6px;
+    --padding-bottom: 4px;
+    --padding-start: 6px;
+    font-size: 9px;
+    font-weight: bold;
+    z-index: 100;
+}
+.classValDataEn{
+   --background: #ED2224;
+    color: var(--ion-color-wight);
+    position: fixed;
+	font-family: emoji;
+    top: 0px;
+    left: 40px;
+    --padding-top: 4px;
+    --padding-end: 6px;
+    --padding-bottom: 4px;
+    --padding-start: 6px;
+    font-size: 9px;
+    font-weight: bold;
+    z-index: 100;
+}
+.classLight{
+	border:1px solid #b1f5a0; 
+	height:50px; 
+	direction:rtl; 
+	border-radius:10px; 
+	background:#abff97;
+	box-shadow: -2px 0px 8px -5px rgba(0,0,0,0.75);
+	-webkit-box-shadow: -2px 0px 8px -5px rgba(0,0,0,0.75);
+	-moz-box-shadow: -2px 0px 8px -5px rgba(0,0,0,0.75);
+}
+.classDown{
+	border:1px solid #e9e9ea; 
+	height:50px; 
+	direction:rtl; 
+	border-radius:10px;
+	box-shadow: -2px 0px 8px -5px rgba(0,0,0,0.75);
+	-webkit-box-shadow: -2px 0px 8px -5px rgba(0,0,0,0.75);
+	-moz-box-shadow: -2px 0px 8px -5px rgba(0,0,0,0.75);
+}
+.langLight{
+	padding:13px; 
+	display:inline-block; 
+	color:#699c5d
+}
+.imageLight{
+	padding:9px; 
+	display:inline-block;
+	float:left
+}
+.imageDown{
+	padding:13px; 
+	display:inline-block; 
+	color:#000000
+}
+.title{
+	font-size:20px; 
+	font-weight:bold;
+	color:#000000;
+	padding-top: 15px;
+    padding-bottom: 10px;
+}
+.subTitle{
+	font-size:18px; 
+	color:#000000;
+    padding-bottom: 20px;
+	padding-right:15px;
+	padding-left:15px
+}
+/*header*/
+/*menu style*/
+ion-footer{
+	position: fixed;
+    bottom: 0px;
+	border-top: 2px solid #d7d3d7;
+    background: #ebebeb;
+    border-bottom: 2px solid #d7d3d7;
+}
+.menueValues{
+	width:100%;
+	position:fixed;
+	bottom:90px;
+	text-align:center;
+	z-index:10000;
+	height:15px;
+}
+.footerToolbar{
+--background: #e9e9ea;
+--border-width:0px;
+--padding-top:15px;
+--padding-bottom:0px;
+--padding-start:0px;
+--padding-end:0px;
+}
+.menueClass{
+	color:#000000;
+	width:20%;
+	float:right;
+	text-align:center;
+	cursor:pointer;
+	z-index:1000000;
+}
+.menueClassActive{
+	color:#DB4437;
+}
+.labelClass{
+    font-size: 12px !important;
+    margin-bottom: 10px;
+	font-weight: 600;
+}
+ion-badge{
+   --background: #ED2224;
+    color: #ffffff;
+    position: fixed;
+    top: 3px;
+    --padding-top: 5px;
+    --padding-end: 5px;
+    --padding-bottom: 1px;
+    --padding-start: 5px;
+    font-size: 11px;
+}
+/*menu style*/
+

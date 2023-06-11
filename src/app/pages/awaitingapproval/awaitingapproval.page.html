@@ -1,0 +1,24 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar class="headerToolbar">
+     <ion-title>
+        {{myInformation}}
+    </ion-title>
+    <ion-buttons slot="start">
+       <div (click)="functionOpenMenue()" style="padding-left:3px;padding-right:3px"><img src="../../assets/imgs/Group871.png" style="width:28px"></div>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+    <div style="padding:20px">
+    	<div class="title">
+            <span class="startDiv"><img src="../../assets/imgs/notification-icon.png" style="width:20px"></span> {{accountWate}}
+        </div>
+        <div style="padding-top:25px;text-align: center;">
+        	<img src="../../assets/imgs/addInformation.png">
+        </div>
+        <div class="titleNote">
+           <div style="color:#34b861">{{dataAdd}}</div>
+        </div>
+        <div class="subTitle">{{accountWateNote}}</div>
+    </div>
+</ion-content>

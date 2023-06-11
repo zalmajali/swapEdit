@@ -1,0 +1,223 @@
+.headerToolbar{
+	--background: #e9e9ea;
+	--border-width: 0px;
+	--padding-top: 10px;
+	--padding-bottom: 5px;
+	--padding-end: 0px;
+}
+.ios ion-title {
+   position: inherit;
+   width:100%;
+   text-align:center
+}
+toolbar-container{
+	--padding-start:0px
+}
+.mobileNumber{
+	float:left;
+	padding:5px; 
+	background-color:#ED2224; 
+	color:#ffffff; 
+	font-family: auto; 
+	font-size:13px; 
+	border-radius:8px
+}
+ion-title {
+   text-align:center;
+   font-size: 17px;
+   font-weight: 600;
+   color: black;
+   margin-top:5px;
+}
+ion-content{
+	--background: var(--ion-color-header);
+	--padding-bottom:100px;
+}
+/*content*/
+.mobileNumber{
+	float:left;
+	padding:5px; 
+	background-color:#ED2224; 
+	color:#ffffff; 
+	font-family: auto; 
+	font-size:13px; 
+	border-radius:8px;
+    position: absolute;
+    left: 10px;
+    bottom: -8px;
+}
+.mobileNumber2{
+	float: left;
+    padding: 4px 11px 0px 13px;
+    background-color: #a0a09f;
+    color: #ffffff;
+    font-family: auto;
+    font-size: 13px;
+    border-radius: 8px;
+    position: absolute;
+    left: 30px;
+    margin-left: 100px;
+    bottom: -8px;
+}
+.oneButton{
+    text-transform: none;
+	--background: #ED2224 !important;
+	--color:#ffffff !important;
+	--border-radius: 10px;
+	--padding:0px;
+	height:50px;
+	width:100%;
+}
+.oneButton.activated{
+	--background: #ED2224 !important;
+	padding:0px;
+}
+.paddingData{
+	padding-top:20px;
+	padding-left:20px;
+	padding-right:20px
+}
+.name{
+	font-size: 25px;
+	padding-right: 10px;
+	padding-bottom:3px;
+	color:#000000;
+}
+.catAndSubCat{
+	font-size: 18px;
+	padding-right: 10px;
+	padding-bottom:3px;
+	color:#000000;
+}
+.cityAndRegion{
+	font-size: 16px;
+	padding-right: 10px;
+	padding-bottom:3px;
+	color:#000000;
+}
+.borderTop{
+	border-top:2px solid #a0a09f; 
+	margin-top:25px
+}
+.faveIcon{
+	font-size: 20px;
+	color:#0eae4c
+}
+.unfaveIcon{
+	font-size: 20px;
+	color:#ffffff
+}
+.sherIcon{
+	font-size: 20px;
+	color:#ffffff;
+	padding-left:10px
+}
+/*header*/
+.palanceText{
+	vertical-align: top;
+	background-color:#a19f9e;
+	font-size: 9px;
+	padding: 3px 9px 3px 8px;
+	border-radius: 5px;
+	color:#ffffff;
+	margin-top: 5px;
+	display: inline-block;
+}
+.palancePoints{
+	font-family: emoji;
+	color: #ED2224;
+	vertical-align: top;
+	font-size:23px;
+	display: inline-block;
+	padding: 0px 3px 0px 3px;
+}
+.point{
+	color: #ED2224;
+	vertical-align: top;
+	font-size:11px;
+	display: inline-block;
+}
+.classValDataAr{
+   --background: #ED2224;
+    color: var(--ion-color-wight);
+    position: fixed;
+	font-family: emoji;
+    top: 0px;
+    right: 40px;
+    --padding-top: 4px;
+    --padding-end: 6px;
+    --padding-bottom: 4px;
+    --padding-start: 6px;
+    font-size: 9px;
+    font-weight: bold;
+    z-index: 100;
+}
+.classValDataEn{
+   --background: #ED2224;
+    color: var(--ion-color-wight);
+    position: fixed;
+	font-family: emoji;
+    top: 0px;
+    left: 40px;
+    --padding-top: 4px;
+    --padding-end: 6px;
+    --padding-bottom: 4px;
+    --padding-start: 6px;
+    font-size: 9px;
+    font-weight: bold;
+    z-index: 100;
+}
+/*header*/
+/*menu style*/
+ion-footer{
+	position: fixed;
+    bottom: 0px;
+	border-top: 2px solid #d7d3d7;
+    background: #ebebeb;
+    border-bottom: 2px solid #d7d3d7;
+}
+.menueValues{
+	width:100%;
+	position:fixed;
+	bottom:90px;
+	text-align:center;
+	z-index:10000;
+	height:15px;
+}
+.footerToolbar{
+--background: #e9e9ea;
+--border-width:0px;
+--padding-top:15px;
+--padding-bottom:0px;
+--padding-start:0px;
+--padding-end:0px;
+}
+.menueClass{
+	color:#000000;
+	width:20%;
+	float:right;
+	text-align:center;
+	cursor:pointer;
+	z-index:1000000;
+}
+.menueClassActive{
+	color:#DB4437;
+}
+.labelClass{
+    font-size: 12px !important;
+    margin-bottom: 10px;
+	font-weight: 600;
+}
+ion-badge{
+   --background: #ED2224;
+    color: #ffffff;
+    position: fixed;
+    top: 3px;
+    --padding-top: 5px;
+    --padding-end: 5px;
+    --padding-bottom: 1px;
+    --padding-start: 5px;
+    font-size: 11px;
+}
+/*menu style*/
+

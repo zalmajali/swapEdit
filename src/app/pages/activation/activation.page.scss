@@ -1,0 +1,98 @@
+ion-content{
+	--background: var(--ion-color-header);
+	--padding-end:35px;
+	--padding-start:35px;
+	--padding-bottom:10px
+}
+/*comtent*/
+.firstTitle{
+	padding-top:25px; 
+	text-align:center;
+	color:#000000;	
+}
+.lastTitle{
+	padding-top:5px; 
+	text-align:center;
+	color:#000000;
+	padding-bottom:10px
+}
+ion-item{
+	--background:var(--ion-color-inputFormColor);
+	background-color:#ffffff;
+   --ion-background-color:var(--ion-color-inputFormColor);
+   --inner-padding-start:0px;
+   border-radius:10px;
+   --border-radius:10px;
+   --padding-bottom:0px;
+   border:1px solid #e9e9ea;
+}
+.errorFiled{
+	 border:1px solid #ED2224;
+}
+.succsessFiled{
+	 border:1px solid green;
+}
+.reSendCode{
+	font-size: 13px;
+    color: #ED2224;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.class962{
+	color: #000000;
+    direction: ltr;
+    padding-top: 2px;
+    padding-right: 5px;
+    font-size: 10px;
+	font-family:emoji
+}
+ion-input{
+		--placeholder-color:#b6b6b5;
+	--placeholder-opacity:1;
+	--padding-top:10px;
+	color:#000000;
+	font-size:15px;
+	border-radius:0px;
+	--border-radius:0px;
+	font-family:auto;
+}
+.forgetPassword{
+	font-size: 15px;
+	padding-right:10px;
+	color:#ED2224;
+}
+.errorTitle{
+	color: #ED2224;
+    font-size: 14px;
+    margin-right: 9px;
+}
+.oneButton{
+    text-transform: none;
+	--background: #ED2224 !important;
+	--color:#ffffff !important;
+	--border-radius: 10px;
+	--padding:0px;
+	height:50px;
+	width:100%;
+}
+.oneButton.activated{
+	--background: #ED2224 !important;
+	padding:0px;
+}
+.divButtonClass{
+	text-align:center;
+	padding-top:10px;
+	padding-bottom:10px;
+}
+.divButtonClassIcon{
+	text-align:center;
+	padding-top:25px;
+	direction:ltr
+}
+.classCopyAr{
+	border-left:1px solid #B0AFB0;
+}
+.classCopyEn{
+	border-right:1px solid #B0AFB0;
+}

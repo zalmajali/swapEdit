@@ -1,0 +1,73 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar class="headerToolbar">
+    <ion-title>
+        {{home}}
+    </ion-title>
+    <ion-buttons slot="start">
+       <div (click)="functionOpenMenue()" style="padding-left:3px;padding-right:3px"><img src="../../assets/imgs/Group871.png" style="width:28px"></div>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+    <div style="padding:20px; padding-bottom:20px">
+    	  <div class="paddingBottom">
+                <ion-item lines="none">
+                    <ion-input type="text" [ngModelOptions]="{standalone: true}" [(ngModel)]="searchVal" placeholder="{{searchForm}}" (ionInput)="checkSearch($event)"></ion-input><ion-icon name="search-outline" class="eye" (click)="searchValues()"></ion-icon>
+                </ion-item>
+            </div>
+		<div>
+        	<img src="{{image}}">
+        </div>
+          <div style="padding-bottom:0px">
+            <ion-grid>
+                <ion-row>
+                    <ion-col size="6" (click)="functionChangeType(1)">
+                        <ion-card class="{{selectClassOne}}">
+                            <div class="selectImage" [ngStyle]="{'float': floatD}">
+                                <img src="../../assets/imgs/greenCheck.png" style="width:20px" *ngIf="typeWork==1">
+                                <img src="../../assets/imgs/boxImagegrey.png" style="width:20px" *ngIf="typeWork==2">
+                            </div>
+                            <div class="workType" [ngStyle]="{'float': floatD}">
+                                {{services}}
+                            </div>
+                        </ion-card>
+                    </ion-col>
+                     <ion-col size="6" (click)="functionChangeType(2)">
+                        <ion-card class="{{selectClassTow}}">
+                            <div class="selectImage" [ngStyle]="{'float': floatD}">
+                                <img src="../../assets/imgs/greenCheck.png" style="width:20px" *ngIf="typeWork==2">
+                                <img src="../../assets/imgs/boxImagegrey.png" style="width:20px" *ngIf="typeWork==1">
+                            </div>
+                            <div class="workType" [ngStyle]="{'float': floatD}">
+                                {{products}}
+                            </div>
+                        </ion-card>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </div>
+       <div *ngIf="categories!=0">
+         <ion-grid>
+            <ion-row>
+                <ion-col size="4" *ngFor="let items of returnCategoriesArray">
+                    <div (click)="functionGoServices(items.id,items.title)">
+                        <div><img src="{{items.image}}" class="categoriesHomeDiv"></div>
+                        <div class="categoriesHomeLabel">{{items.title}}</div>
+                    </div>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+       </div>
+        <div class="divEmptyVal" *ngIf="categories==0">
+            <div>
+                <img src="../../assets/imgs/noData.png" style="width:150px; height:150px">
+            </div>
+            <div class="emptyFirstText">
+               {{noDataTitle}}
+            </div>
+            <div class="emptyLastText">
+                {{noDataSubTitle}}
+            </div>
+        </div>
+    </div>
+</ion-content>

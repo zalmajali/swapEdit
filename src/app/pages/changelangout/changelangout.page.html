@@ -1,0 +1,37 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar class="headerToolbar">
+    <ion-title>
+		{{changeLangButton}}
+    </ion-title>
+    <ion-buttons slot="start">
+       <div (click)="functionOpenMenue()" style="padding-left:3px;padding-right:3px"><img src="../../assets/imgs/Group871.png" style="width:28px"></div>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+    <div style="padding:20px 30px">
+    	<div style="text-align: start;">
+        	<div class="title">{{setting}}</div>
+        </div>
+        <div style="text-align: start;">
+        	<div class="subTitle">{{changeLangButton}}</div>
+        </div>
+		<div *ngIf="selectLange == 1" class="classLight">
+        	<div class="langLight">اللغة العربية</div>
+            <div class="imageLight"><img src="../../assets/imgs/checkLang.png" style="width:28px"></div>
+        </div>
+        <div (click)="changeLang(1)" *ngIf="selectLange == 2" class="classDown">
+        	<div class="imageDown">اللغة العربية</div>
+        </div>
+        
+        
+        <div style="padding-top:15px"></div>
+        <div *ngIf="selectLange == 2" class="classLight">
+        	<div class="langLight">English</div>
+            <div class="imageLight"><img src="../../assets/imgs/checkLang.png" style="width:28px"></div>
+        </div>
+        <div (click)="changeLang(2)" *ngIf="selectLange == 1" class="classDown">
+        	<div class="imageDown">English</div>
+        </div>
+    </div>
+</ion-content>

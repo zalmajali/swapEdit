@@ -1,0 +1,67 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar class="headerToolbar">
+    <ion-title>
+        <div>{{searchForm}}</div>
+    </ion-title>
+    <ion-buttons slot="start">
+       <div (click)="closeModel()" style="padding-left:3px;padding-right:3px"><img src="../../assets/imgs/close.png" style="width:28px"></div>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+   <div class="largBox">
+    <div class="paddingBottom">
+       <ion-item lines="none">
+            <ion-select value="{{catIdUser}}" (ionChange)="selectCatValues($event,0)" placeholder="{{accountCatPlaceHolder}}" mode="ios" interface="popover" class="my-custom-interface">
+              <ion-select-option class="{{selectValData}}" value="0">{{accountCatPlaceHolder}}</ion-select-option>
+              <ion-select-option class="{{selectValData}}" *ngFor="let items of returnCategoriesArray" value="{{items.id}}">{{items.title}}</ion-select-option>
+            </ion-select>
+        </ion-item>
+    </div>
+     <div class="paddingBottom">
+       <ion-item lines="none">
+            <ion-select value="{{subCatIdUser}}" (ionChange)="selectSubCatValues($event)"  placeholder="{{accountSubCatPlaceHolder}}" mode="ios" interface="popover" class="my-custom-interface">
+               <ion-select-option class="{{selectValData}}" value="0">{{accountSubCatPlaceHolder}}</ion-select-option>
+              <ion-select-option class="{{selectValData}}" *ngFor="let items of returnsubCatArray" value="{{items.id}}">{{items.title}}</ion-select-option>
+            </ion-select>
+        </ion-item>
+    </div>
+    <div class="paddingBottom">
+       <ion-item lines="none">
+            <ion-select value="{{cityId}}" (ionChange)="selectCityValues($event)"  placeholder="{{accountCityPlaceHolder}}" mode="ios" interface="popover" class="my-custom-interface">
+               <ion-select-option class="{{selectValData}}" value="0">{{accountCityPlaceHolder}}</ion-select-option>
+               <ion-select-option class="{{selectValData}}" *ngFor="let items of returnCitysArray" value="{{items.id}}">{{items.title}}</ion-select-option>
+            </ion-select>
+        </ion-item>
+    </div>
+     <div class="paddingBottom">
+       <ion-item lines="none">
+            <ion-select value="{{regionId}}" (ionChange)="selectRegionValues($event)"  placeholder="{{accountRegionPlaceHolder}}" mode="ios" interface="popover" class="my-custom-interface">
+               <ion-select-option class="{{selectValData}}" value="0">{{accountRegionPlaceHolder}}</ion-select-option>
+              <ion-select-option class="{{selectValData}}" *ngFor="let items of returnRegionsArray" value="{{items.id}}">{{items.title}}</ion-select-option>
+            </ion-select>
+        </ion-item>
+    </div>
+    <div class="paddingBottom">
+        <ion-grid>
+            <ion-row>
+                <ion-col class="textAlignStart" size="6" style="padding:5px">
+                    <ion-item lines="none">
+                    	<ion-input type="number" [(ngModel)]="pointFrom" [ngModelOptions]="{standalone: true}" placeholder="{{pointFromPlaceHolder}}" (ionInput)="checkPointFrom($event)"></ion-input>
+                    </ion-item>
+                </ion-col>
+                <ion-col class="textAlignEnd" size="6" style="padding:5px">
+                     <ion-item lines="none">
+                        <ion-input type="number" [(ngModel)]="pointTo" [ngModelOptions]="{standalone: true}" placeholder="{{pointtoPlaceHolder}}" (ionInput)="checkPointTo($event)"></ion-input>
+                    </ion-item>
+                </ion-col>
+            </ion-row>
+        </ion-grid>  
+    </div>
+    <div>
+      <div class="divButtonClass">
+        <ion-button class="oneButton fontSize18" (click)="functionSearch()" id="submit"><span style="font-size:15px;padding-top:4px">{{search}}</span></ion-button>
+      </div>
+    </div>
+   </div>
+</ion-content>

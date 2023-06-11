@@ -1,0 +1,25 @@
+ion-content{
+	--background: none;
+	background:none;
+    background-size: cover;
+	background-position:center;
+}
+.largBox{
+	width: 100%;
+    text-align: -webkit-center;
+}
+.smallBox{ 
+	text-align:center; 
+	height:250px; 
+	background:#ffffff; 
+	border-radius:5px;
+	box-shadow: 0px 2px 42px 0px rgba(0,0,0,0.67); 
+	-webkit-box-shadow: 0px 2px 42px 0px rgba(0,0,0,0.67); 
+	-moz-box-shadow: 0px 2px 42px 0px rgba(0,0,0,0.67);
+	width:330px;
+}
+.close{
+	font-size: 35px;
+    font-weight: bold;
+    color: #ffffff;
+}

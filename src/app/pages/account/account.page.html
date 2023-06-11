@@ -1,0 +1,234 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar class="headerToolbar">
+    <ion-title>
+        <div class="palanceText"> {{balanceServse}} </div>
+        <div class="palancePoints">{{points}}</div>
+        
+    </ion-title>
+    <ion-buttons slot="start">
+       <div (click)="functionOpenMenue()" style="padding-left:3px;padding-right:3px"><img src="../../assets/imgs/Group871.png" style="width:28px"></div>
+       <div (click)="functionPushNotifications()" style="padding-right:12px;padding-left:12px"><img src="../../assets/imgs/alert.png" style="width:17px"></div>
+       <ion-badge *ngIf="newNotifications!=0" class="{{classValData}}" slot="start" mode='ios'>{{newNotifications}}</ion-badge>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+<ion-refresher slot="fixed" (ionRefresh)="refrechAllPage($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+    <div style="padding:20px">
+      <div style="margin-top: 10px;width:100%;text-align:center">
+            <div>
+            	<img src="{{userImage}}" style="width: 130px;height:130px;border-radius:100%" alt="">
+            </div>
+            <div class="userName">{{userFullName}}</div>
+            <div class="userNameEdit">{{userMobile}}</div>
+      </div>
+       <div style="padding-bottom:15px; padding-top:10px">
+           <div class="typeUserBox">
+                <ion-grid style="padding:0px">
+                    <ion-row style="padding:0px">
+                       	<ion-col size="{{sizeOne}}" style="padding:0px">
+                        <div class="{{classOne}}">
+                        	<div [ngStyle]="{'float': floatD}" ><img src="../../assets/imgs/greenCheck.png" style="width:25px"></div>
+                            <div [ngStyle]="{'float': floatD}" class="{{classThree}}">{{titleData}}</div>
+                        </div>
+                    </ion-col>
+                    <ion-col size="{{sizeTow}}" style="padding:0px">
+                        <div class="{{classTow}}">
+                           	 {{titleSubData}}
+                        </div>
+                        <div class="textValSubSubDiv">
+                           	 {{titleSubSubData}}
+                        </div>
+                    </ion-col>
+                    </ion-row>
+                </ion-grid>
+           </div>
+           <div style="padding-bottom:15px; padding-top:10px">
+            <form style="display: contents;" (ngSubmit)="updateAccount()">
+            	<div class="paddingBottom">
+                    <ion-item lines="none" class="{{errorUserName}}">
+                        <ion-input type="text" [(ngModel)]="userName" [ngModelOptions]="{standalone: true}" placeholder="{{accountNamePlaceHolder}}" (ionInput)="checkUserName($event)"></ion-input>
+                    </ion-item>
+                    <div class="errorTitle" *ngIf="isErrorUserName == 0">{{accountNameError}}</div>
+                </div>
+                <div class="paddingBottom" *ngIf="typeUser==3 || typeUser==4">
+                    <ion-item lines="none" class="{{errorCommercialName}}">
+                        <ion-input type="text" [(ngModel)]="commercialName" [ngModelOptions]="{standalone: true}" placeholder="{{accountCommercialNamePlaceHolder}}" (ionInput)="checkCommercialName($event)"></ion-input>
+                    </ion-item>
+                    <div class="errorTitle" *ngIf="isErrorCommercialName == 0">{{accountCommercialNameError}}</div>
+                </div>
+                 <div class="paddingBottom" *ngIf="typeUser==3 || typeUser==4">
+                    <ion-item lines="none">
+                        <ion-input  type="text" [(ngModel)]="firstFileVal" [ngModelOptions]="{standalone: true}" placeholder="{{informationCommercialImage}}"></ion-input>
+                        <span class="class962" (click)="uploadeFirstFile()">
+                           {{accountUplode}}
+                        </span>
+                    </ion-item>
+                </div>
+                 <div class="paddingBottom" *ngIf="typeUser==3 || typeUser==4">
+                    <ion-item lines="none">
+                        <ion-input  type="text" [(ngModel)]="secondFileVal" [ngModelOptions]="{standalone: true}" placeholder="{{informationCommercial}}"></ion-input>
+                        <span class="class962" (click)="uploadeSecondFile()">
+                           {{accountUplode}}
+                        </span>
+                    </ion-item>
+                </div>
+                 <div class="paddingBottom" >
+                    <ion-item lines="none">
+                        <ion-input  type="text" [(ngModel)]="thirdFileVal" [ngModelOptions]="{standalone: true}" readonly='true' placeholder="{{profilePicturePlacholder}}"></ion-input>
+                        <span class="class962" (click)="uploadeThirdFile()">
+                           {{accountUplode}}
+                        </span>
+                    </ion-item>
+                </div>
+                <div class="paddingBottom" *ngIf="typeUser==2 || typeUser==3 || typeUser==4">
+                   <ion-item lines="none" class="{{errorCat}}" >
+                        <ion-select value="{{catIdUser}}" (ionChange)="selectCatValues($event)" placeholder="{{jobTitleType}}" mode="ios" interface="popover" class="my-custom-interface">
+                          <ion-select-option class="{{selectValData}}" value="0">{{jobTitleType}}</ion-select-option>
+                          <ion-select-option class="{{selectValData}}" *ngFor="let items of returnCategoriesArray" value="{{items.id}}">{{items.title}}</ion-select-option>
+                        </ion-select>
+                    </ion-item>
+                    <div class="errorTitle" *ngIf="isErrorCat== 0">{{accountCatError}}</div>
+                </div>
+                 <div class="paddingBottom" *ngIf="typeUser==2 || typeUser==3 || typeUser==4">
+                   <ion-item lines="none" class="{{errorSubCat}}">
+                        <ion-select value="{{subCatIdUser}}" (ionChange)="selectSubCatValues($event)"  placeholder="{{jobsubTitleType}}" mode="ios" interface="popover" class="my-custom-interface">
+                          <ion-select-option class="{{selectValData}}" value="0">{{jobsubTitleType}}</ion-select-option>
+                          <ion-select-option class="{{selectValData}}" *ngFor="let items of returnsubCatArray" value="{{items.id}}">{{items.title}}</ion-select-option>
+                        </ion-select>
+                    </ion-item>
+                    <div class="errorTitle" *ngIf="isErrorSubCat== 0">{{accountSubCatError}}</div>
+                </div>
+                <div class="paddingBottom">
+                   <ion-item lines="none" class="{{errorCity}}">
+                        <ion-select value="{{cityId}}" (ionChange)="selectCityValues($event)"  placeholder="{{accountCityPlaceHolder}}" mode="ios" interface="popover" class="my-custom-interface">
+                          <ion-select-option class="{{selectValData}}" value="0">{{accountCityPlaceHolder}}</ion-select-option>
+                          <ion-select-option class="{{selectValData}}" *ngFor="let items of returnCitysArray" value="{{items.id}}">{{items.title}}</ion-select-option>
+                        </ion-select>
+                    </ion-item>
+                    <div class="errorTitle" *ngIf="isErrorCity== 0">{{accountCityError}}</div>
+                </div>
+                 <div class="paddingBottom">
+                   <ion-item lines="none" class="{{errorRegion}}">
+                        <ion-select value="{{regionId}}" (ionChange)="selectRegionValues($event)"  placeholder="{{accountRegionPlaceHolder}}" mode="ios" interface="popover" class="my-custom-interface">
+                           <ion-select-option class="{{selectValData}}" value="0">{{accountRegionPlaceHolder}}</ion-select-option>
+                          <ion-select-option class="{{selectValData}}" *ngFor="let items of returnRegionsArray" value="{{items.id}}">{{items.title}}</ion-select-option>
+                        </ion-select>
+                    </ion-item>
+                    <div class="errorTitle" *ngIf="isErrorRegion== 0">{{accountRegionError}}</div>
+                </div>
+                 <div *ngIf="typeUser==1 || typeUser==2">
+                    <ion-grid>
+                        <ion-row>
+                            <ion-col size="6" (click)="functionChangeType(1)">
+                                <ion-card class="{{selectClassOne}}">
+                                    <div class="selectImage" [ngStyle]="{'float': floatD}">
+                                        <img src="../../assets/imgs/greenCheck.png" style="width:20px" *ngIf="typeWork==1">
+                                        <img src="../../assets/imgs/greyCheck.png" style="width:20px" *ngIf="typeWork==2">
+                                    </div>
+                                    <div class="workType" [ngStyle]="{'float': floatD}">
+                                        {{mail}}
+                                    </div>
+                                </ion-card>
+                            </ion-col>
+                             <ion-col size="6" (click)="functionChangeType(2)">
+                                <ion-card class="{{selectClassTow}}">
+                                    <div class="selectImage" [ngStyle]="{'float': floatD}">
+                                        <img src="../../assets/imgs/greenCheck.png" style="width:20px" *ngIf="typeWork==2">
+                                        <img src="../../assets/imgs/greyCheck.png" style="width:20px" *ngIf="typeWork==1">
+                                    </div>
+                                    <div class="workType" [ngStyle]="{'float': floatD}">
+                                        {{FeMail}}
+                                    </div>
+                                </ion-card>
+                            </ion-col>
+                        </ion-row>
+                    </ion-grid>
+                </div>
+               	<div class="paddingBottom" *ngIf="typeUser==1 || typeUser==2">
+                    <ion-item lines="none" class="{{errorBirthDate}}">
+                        <ion-input type="text" [(ngModel)]="birthDate" [ngModelOptions]="{standalone: true}" placeholder="{{informationBirthDatePlaceHolder}}" (ionChange)="checkBirthDate($event)"></ion-input>
+                         <ion-icon name="calendar" class="eye showPas" (click)="openPicker()"></ion-icon>
+                    </ion-item>
+                    <div class="errorTitle" *ngIf="isErrorBirthDate == 0">{{informationBirthDateError}}</div>
+                </div>
+                 <div class="paddingBottom" *ngIf="typeUser==1">
+                   <ion-item lines="none" class="{{errorStatus}}">
+                        <ion-select value="{{selectStatusUser}}" (ionChange)="selectStatusValues($event)" placeholder="{{selectStatusePlacholder}}" mode="ios" interface="popover" class="my-custom-interface">
+                           <ion-select-option class="{{selectValData}}" value="0">{{selectStatusePlacholder}}</ion-select-option>
+                           <ion-select-option class="{{selectValData}}" value="1">{{statuseValuseOne}}</ion-select-option>
+                           <ion-select-option class="{{selectValData}}" value="2">{{statuseValuseTow}}</ion-select-option>
+                           <ion-select-option class="{{selectValData}}" value="3">{{statuseValuseThree}}</ion-select-option>
+                           <ion-select-option class="{{selectValData}}" value="4">{{statuseValusefore}}</ion-select-option>
+                        </ion-select>
+                    </ion-item>
+                    <div class="errorTitle" *ngIf="isErrorStatus== 0">{{selectStatuseError}}</div>
+                </div>
+                  <div class="paddingBottom" *ngIf="typeUser==3 || typeUser==4">
+                   <ion-item lines="none" class="{{errorEmployeeCount}}">
+                        <ion-select style="font-family: emoji;font-size:14px"  value="{{employeeCount}}" (ionChange)="selectEmployeeCountValues($event)"  placeholder="{{selectEmployeeCountPlacholder}}" mode="ios" interface="popover" class="my-custom-interface">
+                           <ion-select-option class="{{selectValData}}" value="0">{{selectEmployeeCountPlacholder}}</ion-select-option>
+                           <ion-select-option class="{{selectValData}} selectEmployee" value="1">0-5</ion-select-option>
+                           <ion-select-option class="{{selectValData}} selectEmployee" value="2">6-50</ion-select-option>
+                            <ion-select-option class="{{selectValData}} selectEmployee" value="3">51-200</ion-select-option>
+                        </ion-select>
+                    </ion-item>
+                    <div class="errorTitle" *ngIf="isErrorEmployeeCount== 0">{{selectEmployeeCountError}}</div>
+                </div>
+                 <div class="paddingBottom" *ngIf="typeUser==3 || typeUser==4">
+                   <ion-item lines="none" class="{{errorTypeWork}}">
+                        <ion-select value="{{typeWorkVal}}" (ionChange)="selectTypeWorkValues($event)"  placeholder="{{selectTypeWorkPlacholder}}" mode="ios" interface="popover" class="my-custom-interface">
+                           <ion-select-option class="{{selectValData}}" value="0">{{selectTypeWorkPlacholder}}</ion-select-option>
+                           <ion-select-option class="{{selectValData}}" value="1">{{employer}}</ion-select-option>
+                           <ion-select-option class="{{selectValData}}" value="2">{{employee}}</ion-select-option>
+                        </ion-select>
+                    </ion-item>
+                    <div class="errorTitle" *ngIf="isErrorTypeWork== 0">{{selectTypeWorkError}}</div>
+                </div>
+                
+                 <div class="paddingBottom">
+                    <ion-item lines="none" class="{{errorServiceDetails}}">
+                        <ion-textarea rows="5" [(ngModel)]="serviceDetails" [ngModelOptions]="{standalone: true}" placeholder="{{accountDetalePlaceHolder}}" (ionInput)="checkServiceDetails($event)"></ion-textarea>
+                    </ion-item>
+                    <div class="errorTitle" *ngIf="isErrorServiceDetails == 0">{{accountDetaleError}}</div>
+                </div>
+                <div>
+                  <div class="divButtonClass">
+                    <ion-button class="oneButton fontSize18" (click)="updateAccount()" id="submit" disabled="{{!isdisabled}}"><span style="font-size:15px;padding-top:4px">{{accountEdit}}</span></ion-button>
+                  </div>
+                </div>
+            <button style="visibility:hidden" id="submit" ion-button type="submit" ></button>
+            </form>
+           </div>
+       </div>
+    </div>
+</ion-content>
+<div class="menueValues"><img (click)="functionGoToSendPoint()" src="../../assets/imgs/sendPoint.png" style="width:70px"></div>
+<ion-footer class="ion-no-border">
+    <ion-toolbar class="footerToolbar">
+        <div class="width100">
+            <div class="menueClass" [ngStyle]="{'float': floatD}"  (click)="functionGoToHome()">
+                <div><img src="../../assets/imgs/Group862.png" style="width:20px"></div>
+                <div class="labelClass">{{menuOne}}</div>
+            </div>
+            <div class="menueClass" [ngStyle]="{'float': floatD}" (click)="functionGoInvitations()">
+                <div><img src="../../assets/imgs/Group863.png" style="width:18px"></div>
+                <div class="labelClass">{{menuTow}}</div>
+            </div>
+            <div class="menueClass" [ngStyle]="{'float': floatD}" (click)="functionGoToSendPoint()">
+                <div style="height:28px"></div>
+                <div class="labelClass" style="font-size:15px">{{menuThree}}</div>
+            </div>
+            <div class="menueClass" [ngStyle]="{'float': floatD}" (click)="functionGoToArchives()">
+                <div><img src="../../assets/imgs/Group865.png" style="width:18px"></div>
+                <div class="labelClass">{{menuFor}}</div>
+            </div>
+            <div class="menueClass" [ngStyle]="{'float': floatD}">
+                <div><img src="../../assets/imgs/GroupSelect866.png" style="width:18px"></div>
+                <div class="labelClass">{{menuFive}}</div>
+            </div>
+        </div>
+    </ion-toolbar>
+</ion-footer>

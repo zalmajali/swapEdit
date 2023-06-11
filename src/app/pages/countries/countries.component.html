@@ -1,0 +1,25 @@
+<ion-content>
+    <div class="catNameClass" [ngStyle]="{'direction': dir}"><span style="vertical-align:middle" (click)="closeModel()"><ion-icon name="{{arrowSideTow}}" class="iconVal"></ion-icon></span>{{selectCountry}}</div>
+    <div class="box" *ngFor="let items of returnCountriesArray; let j=index">
+    	 <ion-grid>
+            <ion-row [ngStyle]="{'direction': dir}">
+                <ion-col size="9" class="textAlignStart" style="padding:0px">
+                	<div [ngStyle]="{'float': floatD}" class="image">
+                         <img src="{{items.image}}" style="width:32px;border-radius: 50px;">
+                    </div>
+                    <div class="name">
+                         {{items.title}}
+                    </div>
+                    <div class="key">
+                         +{{items.key}}
+                    </div>
+                </ion-col>
+                <ion-col size="3" class="textAlignEnd" style="padding:0px" (click)="getTheCountry(items.key,items.title,items.image)">
+                    <div class="select">
+                         {{select}}
+                    </div>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </div>
+</ion-content>

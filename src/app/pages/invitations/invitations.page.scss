@@ -1,0 +1,247 @@
+.headerToolbar{
+	--background: #e9e9ea;
+	--border-width: 0px;
+	--padding-top: 10px;
+	--padding-bottom: 5px;
+	--padding-end: 0px;
+}
+.ios ion-title {
+   position: inherit;
+   width:100%;
+   text-align:center
+}
+toolbar-container{
+	--padding-start:0px
+}
+.mobileNumber{
+	float:left;
+	padding:5px; 
+	background-color:#ED2224; 
+	color:#ffffff; 
+	font-family: auto; 
+	font-size:13px; 
+	border-radius:5px
+}
+ion-title {
+   text-align:center;
+   font-size: 17px;
+   font-weight: 600;
+   color: black;
+   margin-top:5px;
+}
+ion-content{
+	--background: var(--ion-color-header);
+	--padding-bottom:100px;
+}
+.divButtonClass{
+	text-align:center;
+	padding-top:10px;
+	padding-bottom:10px;
+}
+.oneButtonTow{
+	text-transform: none;
+	--background: #ED2224 !important;
+	--color:#ffffff !important;
+	--border-radius: 10px;
+	--padding:0px;
+	height:50px;
+	width:175px;
+}
+.oneButtonTow.activated{
+	--background: #ED2224 !important;
+	padding:0px;
+}
+/*content*/
+.borderTop{
+	border-top:4px solid #ED2224;
+	margin-bottom: 10px;
+}
+.borderBottom{
+	border-bottom:2px solid #a0a09f;
+	margin-bottom: 10px;
+	margin-top: 2px;
+}
+.dateTitle{
+	padding-top:2px;
+	text-align:center;
+	font-size: 15px;
+	font-weight: bold;
+	color:#000000;
+}
+.inviteTitle{
+	padding-top:2px;
+	font-size: 15px;
+	font-weight: bold;
+	color:#000000;
+}
+.mobiltTitle{
+	padding-top:2px;
+	text-align:center;
+	font-size: 15px;
+	font-weight: bold;
+	color:#000000;
+}
+.date{
+	padding-top:10px;
+	padding-bottom:7px;
+	text-align:center;
+	font-size: 12px;
+	font-family:auto;
+	font-weight: bold;
+	color:#000000;
+}
+.invite{
+	padding-top:10px;
+	padding-bottom:7px;
+	font-size: 12px;
+	color:#000000;
+}
+.mobile{
+	padding-top:15px;
+	padding-bottom:7px;
+	text-align:center;
+	font-size: 11px;
+	font-family:auto;
+	padding-left:4px;
+	font-weight: bold;
+	color:#000000;
+}
+.classGrid{
+	padding:0px;
+	border-bottom:2px solid #a0a09f;
+	background-color:#e9e9ea;
+}
+.classGridNoColor{
+	padding:0px;
+	border-bottom:2px solid #a0a09f;
+}
+.card{
+	margin: 0px;
+	border-radius:10px;
+}
+.more{
+	font-size:25px;
+	color:#B0AFB0
+}
+.divEmptyVal{
+    text-align: center;
+    padding-top: 200px;
+}
+.emptyFirstText{
+    font-size: 20px;
+    color:#ED2224;
+    padding-bottom: 5px;
+}
+.emptyLastText{
+    font-size: 15px;
+     color:#ED2224;
+}
+/*header*/
+.palanceText{
+	vertical-align: top;
+	background-color:#a19f9e;
+	font-size: 9px;
+	padding: 3px 9px 3px 8px;
+	border-radius: 5px;
+	color:#ffffff;
+	margin-top: 5px;
+	display: inline-block;
+}
+.palancePoints{
+	font-family: emoji;
+	color: #ED2224;
+	vertical-align: top;
+	font-size:23px;
+	display: inline-block;
+	padding: 0px 3px 0px 3px;
+}
+.point{
+	color: #ED2224;
+	vertical-align: top;
+	font-size:11px;
+	display: inline-block;
+}
+.classValDataAr{
+   --background: #ED2224;
+    color: var(--ion-color-wight);
+    position: fixed;
+	font-family: emoji;
+    top: 0px;
+    right: 40px;
+    --padding-top: 4px;
+    --padding-end: 6px;
+    --padding-bottom: 4px;
+    --padding-start: 6px;
+    font-size: 9px;
+    font-weight: bold;
+    z-index: 100;
+}
+.classValDataEn{
+   --background: #ED2224;
+    color: var(--ion-color-wight);
+    position: fixed;
+	font-family: emoji;
+    top: 0px;
+    left: 40px;
+    --padding-top: 4px;
+    --padding-end: 6px;
+    --padding-bottom: 4px;
+    --padding-start: 6px;
+    font-size: 9px;
+    font-weight: bold;
+    z-index: 100;
+}
+/*header*/
+/*menu style*/
+ion-footer{
+	position: fixed;
+    bottom: 0px;
+	border-top: 2px solid #d7d3d7;
+    background: #ebebeb;
+    border-bottom: 2px solid #d7d3d7;
+}
+.menueValues{
+	width:100%;
+	position:fixed;
+	bottom:90px;
+	text-align:center;
+	z-index:10000;
+	height:15px;
+}
+.footerToolbar{
+--background: #e9e9ea;
+--border-width:0px;
+--padding-top:15px;
+--padding-bottom:0px;
+--padding-start:0px;
+--padding-end:0px;
+}
+.menueClass{
+	color:#000000;
+	width:20%;
+	float:right;
+	text-align:center;
+	cursor:pointer;
+	z-index:1000000;
+}
+.menueClassActive{
+	color:#DB4437;
+}
+.labelClass{
+    font-size: 12px !important;
+    margin-bottom: 10px;
+	font-weight: 600;
+}
+ion-badge{
+   --background: #ED2224;
+    color: #ffffff;
+    position: fixed;
+    top: 3px;
+    --padding-top: 5px;
+    --padding-end: 5px;
+    --padding-bottom: 1px;
+    --padding-start: 5px;
+    font-size: 11px;
+}
+/*menu style*/
+

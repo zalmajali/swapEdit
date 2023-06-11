@@ -1,0 +1,112 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar class="headerToolbar">
+    <ion-title>
+       <div class="palanceText"> {{balanceServse}} </div>
+        <div class="palancePoints">{{points}}</div>
+        
+    </ion-title>
+    <ion-buttons slot="start">
+       <div (click)="functionOpenMenue()" style="padding-left:3px;padding-right:3px"><img src="../../assets/imgs/Group871.png" style="width:28px"></div>
+       <div (click)="functionPushNotifications()" style="padding-right:12px;padding-left:12px"><img src="../../assets/imgs/alert.png" style="width:17px"></div>
+       <ion-badge *ngIf="newNotifications!=0" class="{{classValData}}" slot="start" mode='ios'>{{newNotifications}}</ion-badge>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+<ion-refresher slot="fixed" (ionRefresh)="refrechAllPage($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+    <div style="padding:20px">
+     <div>
+            <ion-grid>
+                <ion-row>
+                    <ion-col class="textAlignStart" size="9" style="padding:0px">
+                         <div class="catNameClass"><span style="vertical-align:text-top" (click)="functionGoToHome()"><ion-icon name="{{arrowSide}}" class="iconVal"></ion-icon></span> {{searchResult}}</div>
+                    </ion-col>
+                    <ion-col class="textAlignEnd" size="3" style="padding:0px" (click)="servicesFilter()">
+                        <div><img src="../../assets/imgs/filter.png" style="width:22px"></div>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>    
+        </div>
+       <div *ngIf="users!=0">
+           <div *ngFor="let items of returnUsersArray;let i = index">
+                <div class="storesBox">
+                    <div class="storesSubBox">
+                        <div class="storesImageDiv" [ngStyle]="{'float': floatD}" (click)="functionUserDetalis(items.id)">
+                             <img src="{{items.productsImage}}" class="storesImage">
+                        </div>
+                        <div (click)="functionUserDetalis(items.id)" style="height: 95px;">
+                            <div (click)="functionUserDetalis(items.id)">
+                                <div class="storesName">{{items.title}}</div>
+                                <div class="storesSubCatLabel">{{items.commercialName}}</div>
+                                <div class="storesTypeLabel">{{items.cityId}} | {{items.regionsId}}</div>
+                            </div>
+                        </div>
+                          <div style="margin-top:0px;border-top:1px solid #e9e9ea">
+                            <ion-grid style="padding:0px">
+                                <ion-row>
+                                    <ion-col size="8" class="textAlignStart" style="padding:0px;background-color:#f4f4f4;">
+                                        <div class="vavAndRateCladd">
+                                            <img src="../../assets/imgs/unfaverate.png" *ngIf='items.imageType == 0' (click)="saveBookMark(items.id,i)" style="width:22px">
+                                            <img src="../../assets/imgs/favorate.png" *ngIf='items.imageType == 1' (click)="removeBookMark(items.id,i)" style="width:22px">
+                                        </div>
+                                        <div class="vavAndRateCladd" style="border-left:1px solid #e9e9ea;border-right:1px solid #e9e9ea;">
+                                        	<img src="../../assets/imgs/rate.png" style="width:22px">
+                                        </div>
+                                        <div style="font-size:11px; display:inline-block; padding-right:5px; padding-left:5px"><span class="pointProClass">{{items.points}}</span> <span class="pointSwapClass"> {{point}} {{swap}}</span></div>
+                                    </ion-col>
+                                    <ion-col size="4" class="textAlignEnd" style="padding:0px">
+                                        <div (click)="functionCallNumber(items.mobile)" class="mobileNumber" [ngStyle]="{'float': floatTow}"><img src="../../assets/imgs/callicon.png" style="width:10px"> {{items.mobileHide}}</div>
+                                    </ion-col>
+                                </ion-row>
+                            </ion-grid>
+                        </div>
+                    </div>
+                </div>
+           </div>
+       </div>
+        <div class="divEmptyVal" *ngIf="users==0">
+            <div>
+                <img src="../../assets/imgs/noData.png" style="width:150px; height:150px">
+            </div>
+             <div class="emptyFirstText">
+               {{noDataTitle}}
+            </div>
+            <div class="emptyLastText">
+                {{noDataSubTitle}}
+            </div>
+        </div>
+    </div>
+         <ion-infinite-scroll threshold="100px" (ionInfinite)="loadMoreData($event)">
+        <ion-infinite-scroll-content loadingSpinner="none">
+        </ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+</ion-content>
+ <div class="menueValues"><img (click)="functionGoToSendPoint()" src="../../assets/imgs/sendPoint.png" style="width:70px"></div>
+        <ion-footer class="ion-no-border">
+        <ion-toolbar class="footerToolbar">
+            <div class="width100">
+                <div class="menueClass" [ngStyle]="{'float': floatD}" (click)="functionGoToHome()">
+                    <div><img src="../../assets/imgs/Group862.png" style="width:20px"></div>
+                     <div class="labelClass">{{menuOne}}</div>
+                </div>
+                <div class="menueClass" [ngStyle]="{'float': floatD}" (click)="functionGoInvitations()">
+                    <div><img src="../../assets/imgs/Group863.png" style="width:18px"></div>
+                    <div class="labelClass">{{menuTow}}</div>
+                </div>
+                <div class="menueClass" [ngStyle]="{'float': floatD}" (click)="functionGoToSendPoint()">
+                    <div style="height:28px"></div>
+                    <div class="labelClass" style="font-size:15px">{{menuThree}}</div>
+                </div>
+                <div class="menueClass" [ngStyle]="{'float': floatD}" (click)="functionGoToArchives()">
+                    <div><img src="../../assets/imgs/Group865.png" style="width:18px"></div>
+                    <div class="labelClass">{{menuFor}}</div>
+                </div>
+                <div class="menueClass" [ngStyle]="{'float': floatD}" (click)="functionOpenAccount()">
+                    <div><img src="../../assets/imgs/Group866.png" style="width:18px"></div>
+                   <div class="labelClass">{{menuFive}}</div>
+                </div>
+            </div>
+        </ion-toolbar>
+        </ion-footer>

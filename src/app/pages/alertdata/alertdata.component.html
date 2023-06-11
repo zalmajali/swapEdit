@@ -1,0 +1,96 @@
+<ion-content>
+   <div class="largBox">
+   	<div class="smallBox">
+    	<div *ngIf="opera==1">
+            <div style="padding-top:10px"><img src="../../assets/imgs/redCheck.png" style="width:32px"></div>
+            <div class="title">{{alertOne}}</div>
+            <div class="smallTitle">{{alertTow}}</div>
+            <div class="smallTitle">{{alertThree}}</div>
+            <div class="largeDiv">
+                 <ion-grid style="padding:0px">
+                    <ion-row>
+                        <ion-col class="textAlignStart" size="6" style="padding:0px" (click)="closeModel()">
+                            <div style="padding-top:15px;padding-left:20px; font-size:16px;color:#ED2224">
+                                {{out}}
+                            </div>
+                        </ion-col>
+                        <ion-col class="textAlignEnd" size="6" style="padding:0px">
+                            <div>
+                                 <div class="divButtonClass">
+                                    <ion-button class="oneButton fontSize18" (click)="functionGoInvitations()" id="submit"><span style="font-size:12px;padding-top:4px">{{sendInvite}}</span></ion-button>
+                                  </div>
+                            </div>
+                        </ion-col>
+                    </ion-row>
+                </ion-grid>
+            </div>
+        </div>
+        <div *ngIf="opera==2">
+            <div style="padding-top:10px"><img src="../../assets/imgs/redCheck.png" style="width:32px"></div>
+            <div class="titleTow">{{alertFore}}</div>
+            <div class="smallTitleTow">{{alertFive}}</div>
+            <div class="smallTitleThree"><img src="../../assets/imgs/check.png" style="width:15px">{{alertSevn}}</div>
+            <div class="smallTitleThree"><img src="../../assets/imgs/check.png" style="width:15px"> {{alertEghit}}</div>
+            <div class="largeDiv">
+                 <ion-grid style="padding:0px">
+                    <ion-row>
+                        <ion-col class="textAlignStart" size="6" style="padding:0px" (click)="closeModel()">
+                            <div style="padding-top:15px;padding-left:20px; font-size:16px;color:#ED2224">
+                                {{out}}
+                            </div>
+                        </ion-col>
+                        <ion-col class="textAlignEnd" size="6" style="padding:0px">
+                            <div>
+                                 <div class="divButtonClass">
+                                    <ion-button class="oneButtonTow fontSize18" (click)="functionGoInvitations()" id="submit"><span style="font-size:12px;padding-top:4px">{{alertNine}}</span></ion-button>
+                                  </div>
+                            </div>
+                        </ion-col>
+                    </ion-row>
+                </ion-grid>
+            </div>
+        </div>
+        <div *ngIf="opera==3">
+            <div style="padding-top:10px"><img src="../../assets/imgs/redCheck.png" style="width:32px"></div>
+            <div class="titleTow">{{alertFore}}</div>
+            <div class="smallTitleTow">{{alertTen}}</div>
+             <div class="largeDivTow">
+                 <ion-grid style="padding:0px">
+                    <ion-row>
+                        <ion-col class="textAlignStart" size="6" style="padding:0px" (click)="closeModel()">
+                            <div style="padding-bottom: 11px;padding-left: 20px;font-size: 16px;color: #ED2224;padding-top: 11px;">
+                                {{out}}
+                            </div>
+                        </ion-col>
+                    </ion-row>
+                </ion-grid>
+            </div>
+        </div>
+        <div *ngIf="opera==4">
+            <div style="padding-top:10px"><img src="../../assets/imgs/redCheck.png" style="width:32px"></div>
+            <div class="titleTow">{{alertFore}}</div>
+            <div class="smallTitleTow">{{moCardEnagh}}</div>
+            <div class="titleThre">{{chargPageCardBy}}</div>
+            <div class="smallTitleThree"><img src="../../assets/imgs/check.png" style="width:15px">{{goToChargPage}}</div>
+            <div class="largeDiv">
+                 <ion-grid style="padding:0px">
+                    <ion-row>
+                        <ion-col class="textAlignStart" size="6" style="padding:0px" (click)="closeModel()">
+                            <div style="padding-top:15px;padding-left:20px; font-size:16px;color:#ED2224">
+                                {{out}}
+                            </div>
+                        </ion-col>
+                        <ion-col class="textAlignEnd" size="6" style="padding:0px">
+                            <div>
+                                 <div class="divButtonClass">
+                                    <ion-button class="oneButtonTow fontSize18" (click)="chargeInformation()" id="submit"><span style="font-size:12px;padding-top:4px">{{rechargeCard}}</span></ion-button>
+                                  </div>
+                            </div>
+                        </ion-col>
+                    </ion-row>
+                </ion-grid>
+            </div>
+        </div>
+    </div>
+   </div>
+</ion-content>

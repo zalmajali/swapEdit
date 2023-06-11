@@ -1,0 +1,211 @@
+.headerToolbar{
+	--background: #e9e9ea;
+	--border-width: 0px;
+	--padding-top: 10px;
+	--padding-bottom: 5px;
+	--padding-end: 0px;
+}
+.ios ion-title {
+   position: inherit;
+   width:100%;
+   text-align:center
+}
+toolbar-container{
+	--padding-start:0px
+}
+ion-title {
+   text-align:center;
+   font-size: 17px;
+   font-weight: 600;
+   color: black;
+   margin-top:5px;
+}
+ion-content{
+	--background: var(--ion-color-header);
+	--padding-bottom:25px;
+}
+/*content*/
+.oneButton{
+    text-transform: none;
+	--background: #ED2224 !important;
+	--color:#ffffff !important;
+	--border-radius: 10px;
+	--padding:0px;
+	height:50px;
+	width: 160px;
+}
+.oneButton.activated{
+	--background: #ED2224 !important;
+	padding:0px;
+}
+ion-select {
+	--placeholder-color:#b6b6b5;
+	--placeholder-opacity:1;
+	--padding-top:14px;
+	color:#000000;
+	width:100%;
+	font-size:13px;
+}
+.allPoxDiv{
+	border: 2px solid #e9e9ea; 
+	border-radius: 5px; 
+	text-align: center;
+	min-height: 220px;	
+}
+.checkImagDivEn{
+	padding: 9px 8px 0px 8px; 
+	position: absolute; 
+	top: 0px;
+	right:0px
+}
+.checkImagDivAr{
+	padding: 9px 8px 0px 8px; 
+	position: absolute; 
+	top: 0px;
+	left:0px
+}
+.boxImageDiv{
+	width:60%;
+	margin: 11px auto 0px auto
+}
+.boxTitleDiv{
+	font-size: 11px; 
+	font-weight: bolder;
+	color:#000000
+}
+.boxSubTitleDiv{
+	font-size: 11px;
+	padding:7px 7px 7px 7px;
+	color:#000000
+}
+.boxSubSubTitleDiv{
+	font-size: 10px;
+	padding:7px;
+	color:#000000
+}
+.title{
+	margin:15px 2px 30px 2px;
+	background-color:#fef2f2; 
+	padding:15px;
+	font-size: 12px; 
+	border-radius:5px;
+	color: #a5a5a6;
+}
+.startDiv{
+	padding-left:2px; 
+	padding-right:2px;
+	vertical-align:middle;
+}
+.titleDiv{
+	margin:35px 10px 15px 10px;
+	color:#000000;
+	font-size:11px;
+}
+/*header*/
+.palanceText{
+	vertical-align: top;
+	background-color:#a19f9e;
+	font-size: 9px;
+	padding: 3px 9px 3px 8px;
+	border-radius: 5px;
+	color:#ffffff;
+	margin-top: 5px;
+	display: inline-block;
+}
+.palancePoints{
+	font-family: emoji;
+	color: #ED2224;
+	vertical-align: top;
+	font-size:23px;
+	display: inline-block;
+	padding: 0px 3px 0px 3px;
+}
+.point{
+	color: #ED2224;
+	vertical-align: top;
+	font-size:11px;
+	display: inline-block;
+}
+.classValDataAr{
+   --background: #ED2224;
+    color: var(--ion-color-wight);
+    position: fixed;
+	font-family: emoji;
+    top: 0px;
+    right: 40px;
+    --padding-top: 4px;
+    --padding-end: 6px;
+    --padding-bottom: 4px;
+    --padding-start: 6px;
+    font-size: 9px;
+    font-weight: bold;
+    z-index: 100;
+}
+.classValDataEn{
+   --background: #ED2224;
+    color: var(--ion-color-wight);
+    position: fixed;
+	font-family: emoji;
+    top: 0px;
+    left: 40px;
+    --padding-top: 4px;
+    --padding-end: 6px;
+    --padding-bottom: 4px;
+    --padding-start: 6px;
+    font-size: 9px;
+    font-weight: bold;
+    z-index: 100;
+}
+/*header*/
+/*menu style*/
+ion-footer{
+	position: fixed;
+    bottom: 0px;
+	border-top: 2px solid #d7d3d7;
+    background: #ebebeb;
+    border-bottom: 2px solid #d7d3d7;
+}
+.menueValues{
+	width:100%;
+	position:fixed;
+	bottom:90px;
+	text-align:center;
+	z-index:10000;
+	height:15px;
+}
+.footerToolbar{
+--background: #e9e9ea;
+--border-width:0px;
+--padding-top:15px;
+--padding-bottom:0px;
+--padding-start:0px;
+--padding-end:0px;
+}
+.menueClass{
+	color:#000000;
+	width:20%;
+	float:right;
+	text-align:center;
+	cursor:pointer;
+}
+.menueClassActive{
+	color:#DB4437;
+}
+.labelClass{
+    font-size: 12px !important;
+    margin-bottom: 10px;
+	font-weight: 600;
+}
+ion-badge{
+   --background: #ED2224;
+    color: #ffffff;
+    position: fixed;
+    top: 3px;
+    --padding-top: 5px;
+    --padding-end: 5px;
+    --padding-bottom: 1px;
+    --padding-start: 5px;
+    font-size: 11px;
+}
+/*menu style*/
+

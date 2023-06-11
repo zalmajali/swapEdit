@@ -1,0 +1,71 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar class="headerToolbar">
+    <ion-title>
+        {{myInformation}}
+    </ion-title>
+    <ion-buttons slot="start">
+       <div (click)="functionOpenMenue()"><img src="../../assets/imgs/Group871.png" style="width:28px"></div>
+       <div (click)="functionPushNotifications()" style="padding-right:20px"><img src="../../assets/imgs/alert.png" style="width:17px"></div>
+       <ion-badge *ngIf="newNotifications!=0" class="{{classValData}}" slot="start" mode='ios'>{{newNotifications}}</ion-badge>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+    <div style="padding:20px">
+    <div class="title">
+    	<span class="startDiv"><img src="../../assets/imgs/notification-icon.png" style="width:20px"></span> {{userTypeTitle}}
+    </div>
+    <div class="titleDiv">{{userTypeSelect}}</div>
+        <div>
+            <ion-grid style="padding:0px">
+                <ion-row>
+                    <ion-col class="textAlignEnd" size="6"  style="padding:3px">
+                         <div class="allPoxDiv" (click)="selectTypeUser(1)" [ngStyle]="{'background': backgroundColorOne}">
+                         	<div class="{{checkImagDiv}}"><img src="{{imageselectOne}}" width="25px"></div>
+                        	<div class="boxImageDiv"><img src="../../assets/imgs/User.png" style="width:100%;"></div>
+                            <div class="boxTitleDiv">{{userTypeTitleOne}}</div>
+                            <div class="boxSubTitleDiv">{{userTypeSubTitleOne}}</div>
+                            <div class="boxSubSubTitleDiv">{{userTypeSubSubTitleOne}}</div>
+                        </div>
+                    </ion-col>
+                    <ion-col class="textAlignStart" size="6" style="padding:3px">
+                        <div class="allPoxDiv" (click)="selectTypeUser(2)" [ngStyle]="{'background': backgroundColorTow}">
+                         	<div class="{{checkImagDiv}}"><img src="{{imageselectTow}}" width="25px"></div>
+                        	<div class="boxImageDiv"><img src="../../assets/imgs/freelancer-indivisual.png" style="width:100%;"></div>
+                            <div class="boxTitleDiv">{{userTypeTitleTow}}</div>
+                            <div class="boxSubTitleDiv">{{userTypeSubTitleTow}}</div>
+                            <div class="boxSubSubTitleDiv">{{userTypeSubSubTitleTow}}</div>
+                        </div>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </div>
+        <div>
+            <ion-grid style="padding:0px">
+                <ion-row>
+                     <ion-col class="textAlignStart" size="6" style="padding:3px">
+                         <div class="allPoxDiv" (click)="selectTypeUser(3)" [ngStyle]="{'background': backgroundColorThree}">
+                         	<div class="{{checkImagDiv}}"><img src="{{imageselectThree}}"width="25px"></div>
+                        	<div class="boxImageDiv"><img src="../../assets/imgs/small-business.png" style="width:100%;"></div>
+                            <div class="boxTitleDiv">{{userTypeTitleThree}}</div>
+                            <div class="boxSubTitleDiv">&nbsp;</div>
+                            <div style="font-size: 10px;padding:7px;color:#000000">{{userTypeSubSubTitleThree}}</div>
+                        </div>
+                    </ion-col>
+                    <ion-col class="textAlignEnd" size="6"  style="padding:3px" [ngStyle]="{'background': backgroundColorFore}">
+                        <div class="allPoxDiv" (click)="selectTypeUser(4)">
+                         	<div class="{{checkImagDiv}}"><img src="{{imageselectFore}}" width="25px"></div>
+                        	<div class="boxImageDiv"><img src="../../assets/imgs/companies.png" style="width:100%;"></div>
+                            <div class="boxTitleDiv">{{userTypeTitleFor}}</div>
+                            <div class="boxSubTitleDiv">&nbsp;</div>
+                            <div class="boxSubSubTitleDiv">{{userTypeSubSubTitleFor}}</div>
+                        </div>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </div>
+        <div class="divButtonClass" style="text-align:end;">
+            <ion-button class="oneButton fontSize18" (click)="nextPage()" id="submit" disabled="{{!isdisabled}}"><span style="font-size:15px;padding-top:4px">{{next}}</span></ion-button>
+          </div>
+    </div>
+</ion-content>

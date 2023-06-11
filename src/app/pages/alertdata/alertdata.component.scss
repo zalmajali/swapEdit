@@ -1,0 +1,100 @@
+ion-content{
+	--background: none;
+	background:none;
+    background-size: cover;
+	background-position:center;
+}
+.largBox{
+	width: 100%;
+    text-align: -webkit-center;
+}
+.smallBox{
+	margin-top:200px; 
+	text-align:center; 
+	height:250px; 
+	background:#ffffff; 
+	border-radius:5px;
+	box-shadow: 0px 2px 42px 0px rgba(0,0,0,0.67); 
+	-webkit-box-shadow: 0px 2px 42px 0px rgba(0,0,0,0.67); 
+	-moz-box-shadow: 0px 2px 42px 0px rgba(0,0,0,0.67);
+	width:330px;
+}
+.title{
+	padding-top:2px;
+	color:#000000;
+	font-size:22px
+}
+
+.titleTow{
+	padding-top:2px;
+	color:#eb2f2a;
+	font-size:16px
+}
+.titleThre{
+	padding: 9px 30px 5px 23px;
+	color:#000000;
+	font-size:18px;
+	text-align:right
+}
+.smallTitleTow{
+	padding:5px 30px 5px 23px;
+	color:#eb2f2a;
+	font-size:14px; 
+	text-align:right
+}
+.smallTitleThree{
+	padding:0px 30px 0px 23px;
+	color:#000000;
+	font-size:11px; 
+	text-align:right;
+	direction:rtl;
+	font-weight:bold
+}
+.largeDiv{
+	background: #e9e9ea;
+    margin-top: 25px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    padding-right: 7px;
+    padding-left: 7px;
+}
+.largeDivTow{
+	background: #e9e9ea;
+    margin-top: 30px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    padding-right: 7px;
+    padding-left: 7px;
+}
+.smallTitle{
+	padding:5px 30px 5px 23px;
+	color:#000000;
+	font-size:16px; 
+	text-align:right
+}
+.oneButton{
+    text-transform: none;
+	--background: #ED2224 !important;
+    --color: #ffffff !important;
+    --border-radius: 7px;
+    --padding: 0px;
+    height: 44px;
+    width: 99px;
+}
+.oneButton.activated{
+	--background: #ED2224 !important;
+	padding:0px;
+}
+.oneButtonTow{
+	text-transform: none;
+	--background: #ED2224 !important;
+    --color: #ffffff !important;
+    --border-radius: 7px;
+    --padding: 0px;
+    height: 44px;
+    width: 155px;
+}
+.oneButtonTow.activated{
+	--background: #ED2224 !important;
+	padding:0px;
+}

@@ -1,0 +1,90 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar class="headerToolbar">
+    <ion-title>
+        <div class="palanceText"> {{balanceServse}} </div>
+        <div class="palancePoints">{{points}}</div>
+        
+    </ion-title>
+    <ion-buttons slot="start">
+       <div (click)="functionOpenMenue()" style="padding-left:3px;padding-right:3px"><img src="../../assets/imgs/Group871.png" style="width:28px"></div>
+       <div (click)="functionPushNotifications()" style="padding-right:12px;padding-left:12px"><img src="../../assets/imgs/alert.png" style="width:17px"></div>
+       <ion-badge *ngIf="newNotifications!=0" class="{{classValData}}" slot="start" mode='ios'>{{newNotifications}}</ion-badge>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+    <div style="padding:20px">
+    	<div style="text-align: start;">
+        	<div class="title"><span style="vertical-align:middle;" (click)="backChargeInformation()"><ion-icon name="{{arrowSide}}" class="iconVal"></ion-icon></span> {{cardMovements}}</div>
+        </div>
+        <div *ngIf="movements!=0">
+            <div style="padding-top:15px"  *ngFor="let items of returnMovementsArray">
+                <div class="boxRed" *ngIf="items.type==2">
+                    <div class="iconClassOne"><ion-icon name="chevron-down-outline" class="iconDowen"></ion-icon></div>
+                    <div class="mony">{{items.value}} {{mony}}</div>
+                    <div class="{{classDataRed}}">{{pointTransfer}}  <span style="font-weight:bold;color:#000000"> {{items.toUserId}}</span></div>
+                     <div class="{{classDataRed}}" style="padding-top:10px;padding-bottom:15px">
+                     <ion-row>
+                        <ion-col class="textAlignStart" size="6" style="padding:0px">
+                            <div style="color:#a0a09f; font-size:9px">{{transactionNumber}} <span style="font-family: none;">{{items.dealNumber}}</span></div>
+                        </ion-col>
+                        <ion-col class="textAlignEnd" size="6" style="padding:0px">
+                            <div class="classdate">{{items.date}}</div>
+                        </ion-col>
+                    </ion-row>
+                     </div>
+                </div>
+                 <div class="boxGreen" *ngIf="items.type==1">
+                    <div class="iconClassOne"><ion-icon name="chevron-up-outline" class="iconUp"></ion-icon></div>
+                    <div class="monyGreen">{{items.value}} {{mony}}</div>
+                    <div class="{{classDataGreen}}" style="color:#38b558">{{rechargeCard}}</div>
+                     <div class="{{classDataGreen}}" style="padding-top:10px;padding-bottom:15px">
+                     <ion-row>
+                        <ion-col class="textAlignStart" size="12" style="padding:0px">
+                            <div class="classdateTow">{{items.date}}</div>
+                        </ion-col>
+                    </ion-row>
+                     </div>
+                </div>
+             </div>
+        </div>
+        <div class="divEmptyVal" *ngIf="movements==0">
+            <div>
+                <img src="../../assets/imgs/noData.png" style="width:150px; height:150px">
+            </div>
+             <div class="emptyFirstText">
+               {{noDataTitle}}
+            </div>
+            <div class="emptyLastText">
+                {{noDataSubTitle}}
+            </div>
+        </div>
+        </div>
+</ion-content>
+<div class="menueValues"><img (click)="functionGoToSendPoint()" src="../../assets/imgs/sendPoint.png" style="width:70px"></div>
+   <ion-footer class="ion-no-border">
+        <ion-toolbar class="footerToolbar">
+            <div class="width100">
+                <div class="menueClass" [ngStyle]="{'float': floatD}" (click)="functionGoToHome()" >
+                    <div><img src="../../assets/imgs/Group862.png" style="width:20px"></div>
+                     <div class="labelClass">{{menuOne}}</div>
+                </div>
+                <div class="menueClass" [ngStyle]="{'float': floatD}" (click)="functionGoInvitations()" >
+                    <div><img src="../../assets/imgs/Group863.png" style="width:18px"></div>
+                    <div class="labelClass">{{menuTow}}</div>
+                </div>
+                <div class="menueClass" [ngStyle]="{'float': floatD}" (click)="functionGoToSendPoint()" >
+                    <div style="height:28px"></div>
+                    <div class="labelClass" style="font-size:15px">{{menuThree}}</div>
+                </div>
+                <div class="menueClass" [ngStyle]="{'float': floatD}" (click)="functionGoToArchives()" >
+                    <div><img src="../../assets/imgs/Group865.png" style="width:18px"></div>
+                    <div class="labelClass">{{menuFor}}</div>
+                </div>
+                <div class="menueClass" [ngStyle]="{'float': floatD}" (click)="functionOpenAccount()" >
+                    <div><img src="../../assets/imgs/Group866.png" style="width:18px"></div>
+                   <div class="labelClass">{{menuFive}}</div>
+                </div>
+            </div>
+        </ion-toolbar>
+        </ion-footer>

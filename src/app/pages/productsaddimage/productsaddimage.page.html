@@ -1,0 +1,89 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar class="headerToolbar">
+    <ion-title>
+        <div class="palanceText"> {{balanceServse}} </div>
+        <div class="palancePoints">{{points}}</div>
+        
+    </ion-title>
+    <ion-buttons slot="start">
+       <div (click)="functionOpenMenue()" style="padding-left:3px;padding-right:3px"><img src="../../assets/imgs/Group871.png" style="width:28px"></div>
+       <div (click)="functionPushNotifications()" style="padding-right:12px;padding-left:12px"><img src="../../assets/imgs/alert.png" style="width:17px"></div>
+       <ion-badge *ngIf="newNotifications!=0" class="{{classValData}}" slot="start" mode='ios'>{{newNotifications}}</ion-badge>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+    <div style="padding:20px">
+       <div style="text-align: start;">
+        	<div class="catNameClass" *ngIf="typeOp == 1"><span style="vertical-align:middle" (click)="functionGoBack()"><ion-icon name="{{arrowSideTow}}" class="iconVal"></ion-icon></span>{{maintenanceServices}}</div>
+            <div class="catNameClass" *ngIf="typeOp == 2"><span style="vertical-align:middle" (click)="functionGoBack()"><ion-icon name="{{arrowSideTow}}" class="iconVal"></ion-icon></span>{{products}}</div> 
+        	<div class="title">{{addImageTo}}</div>
+            <div class="subtitle">{{showAddImage}}</div>
+        </div>
+        <div class="largDiv">
+            <div class="firstbox">
+            	<div (click)="uploadeFirstFile()">
+                	<img *ngIf ="image1Replase==0 || image1Replase=='' || image1Replase=='O' || image1Replase=='o'" src="../../assets/imgs/camera.png" style="width: 30px; height: 30px;">
+                    <img *ngIf ="image1Replase!=0 && image1Replase!='' && image1Replase!='O' && image1Replase!='o'" src="{{image1Replase}}" style="width: 30px; border-radius: 100%; height: 30px;">
+                </div>
+                <div (click)="uploadeFirstFile()" style="text-align:center; font-size:12px;color:#000000">{{menuOne}}</div>
+                <div>
+                	<div style="display:inline-block;width: 50%;padding-top: 5px;" (click)="showImage(image1Replase)"><img src="../../assets/imgs/view-large.png" style="width:15px"> </div>
+                </div>
+            </div>
+           <div class="lastbox">
+            	<div (click)="uploadeSecondFile()">
+                	<img *ngIf ="image2Replase==0 || image2Replase=='' || image2Replase=='O' || image2Replase=='o'" src="../../assets/imgs/camera.png" style="width: 30px; height: 30px;">
+                    <img *ngIf ="image2Replase!=0 && image2Replase!='' && image2Replase!='O' && image2Replase!='o'" src="{{image2Replase}}" style="width: 30px; border-radius: 100%; height: 30px;">
+                 </div>   
+                <div (click)="uploadeSecondFile()" style="text-align:center; font-size:12px"></div>
+            	<div>
+                	<div style="display:inline-block;width: 50%;padding-top: 5px;" (click)="showImage(image2Replase)"><img src="../../assets/imgs/view-large.png" style="width:15px"> </div>
+                </div>
+            </div>
+            <div class="lastbox">
+            	<div (click)="uploadeThirdFile()">
+                	<img *ngIf ="image3Replase==0 || image3Replase=='' || image3Replase=='O' || image3Replase=='o'" src="../../assets/imgs/camera.png" style="width: 30px; height: 30px;">
+                    <img *ngIf ="image3Replase!=0 && image3Replase!='' && image3Replase!='O' && image3Replase!='o'" src="{{image3Replase}}" style="width: 30px; border-radius: 100%; height: 30px;">
+                </div>
+                <div (click)="uploadeThirdFile()" style="text-align:center; font-size:12px"></div>
+                <div>
+                	<div style="display:inline-block;width: 50%;padding-top: 5px;" (click)="showImage(image3Replase)"><img src="../../assets/imgs/view-large.png" style="width:15px"> </div>
+                </div>
+            </div>
+        </div>
+        <div style="color:red">
+        {{speshalUrl}}
+        </div>
+        <div class="divButtonClass">
+            <ion-button class="oneButton fontSize18" (click)="addimages()" id="submit" disabled="{{!isdisabled}}"><span style="font-size:15px;padding-top:4px">{{add}}</span></ion-button>
+          </div>
+    </div>
+</ion-content>
+<div class="menueValues"><img (click)="functionGoToSendPoint()" src="../../assets/imgs/sendPoint.png" style="width:70px"></div>
+<ion-footer class="ion-no-border">
+    <ion-toolbar class="footerToolbar">
+        <div class="width100">
+            <div class="menueClass" [ngStyle]="{'float': floatD}"  (click)="functionGoToHome()">
+                <div><img src="../../assets/imgs/Group862.png" style="width:20px"></div>
+                <div class="labelClass">{{menuOne}}</div>
+            </div>
+            <div class="menueClass" [ngStyle]="{'float': floatD}" (click)="functionGoInvitations()">
+                <div><img src="../../assets/imgs/Group863.png" style="width:18px"></div>
+                <div class="labelClass">{{menuTow}}</div>
+            </div>
+            <div class="menueClass" [ngStyle]="{'float': floatD}" (click)="functionGoToSendPoint()">
+                <div style="height:28px"></div>
+                <div class="labelClass" style="font-size:15px">{{menuThree}}</div>
+            </div>
+            <div class="menueClass" [ngStyle]="{'float': floatD}" (click)="functionGoToArchives()">
+                <div><img src="../../assets/imgs/Group865.png" style="width:18px"></div>
+                <div class="labelClass">{{menuFor}}</div>
+            </div>
+            <div class="menueClass" [ngStyle]="{'float': floatD}">
+                <div><img src="../../assets/imgs/GroupSelect866.png" style="width:18px"></div>
+                <div class="labelClass">{{menuFive}}</div>
+            </div>
+        </div>
+    </ion-toolbar>
+</ion-footer>

@@ -1,0 +1,30 @@
+<ion-content>
+<div style="padding-top:33px" (click)="functionOpenMenue()"><img src="../../assets/imgs/Group871.png" style="width:28px"></div>
+    <div style="margin-top:80px; text-align:center">
+        <img style="width:125px;" src="../../assets/imgs/Group.png" >
+    </div>
+    <div class="firstTitle fontSize20 fontweight1">
+        {{forgotPasswordVal}}
+    </div>
+    <div style="padding-top:50px">
+        <form style="display: contents;" (ngSubmit)="forgotPassword()">
+            <div class="paddingBottom">
+                <ion-item lines="none" class="{{errorNumber}}" style="direction:rtl">
+                	<ion-input class="classCopyAr" style="direction:ltr" type="number" [(ngModel)]="number" [ngModelOptions]="{standalone: true}" placeholder="{{placeHolderForgotNumber}} 782345678" (ionInput)="checkNumber($event)"></ion-input>
+                    <span class="class962"  (click)="selectCountries()">
+                    	<div style="color:#000000"> <img src="{{image}}" style="width:15px; border-radius:10px"> 
+                        <span style="vertical-align:top; padding-left:3px;padding-right:3px;font-size: 14px;">{{key}}+</span>
+                        <ion-icon name="caret-down-outline" style="width:15px; color:#000000;"></ion-icon></div>
+                    </span>
+                </ion-item>
+                <div class="errorTitle" *ngIf="isErrorNumber == 0">{{errorForgotNumber}}</div>
+            </div> 
+            <div>
+                <div class="divButtonClass">
+                	<ion-button class="oneButton fontSize18" (click)="forgotPassword()" id="submit" disabled="{{!isdisabled}}"><span style="font-size:15px;padding-top:4px">إسترجاع</span></ion-button>
+                </div>
+            </div>
+            <button style="visibility:hidden" id="submit" ion-button type="submit" ></button>
+        </form>
+    </div>
+</ion-content>

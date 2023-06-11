@@ -1,0 +1,84 @@
+.headerToolbar{
+	--background: #e9e9ea;
+	--border-width: 0px;
+	--padding-top: 10px;
+	--padding-bottom: 5px;
+	--padding-end: 0px;
+}
+.ios ion-title {
+   position: inherit;
+   width:100%;
+   text-align:center
+}
+toolbar-container{
+	--padding-start:0px
+}
+.mobileNumber{
+    padding: 5px;
+    background-color: #ED2224;
+    color: #ffffff;
+    font-family: auto;
+    font-size: 13px;
+    border-radius: 5px;
+    position: static;
+}
+ion-title {
+   text-align:center;
+   font-size: 17px;
+   font-weight: 600;
+   color: black;
+   margin-top:5px;
+
+}
+ion-content{
+	--background: #ffffff;
+	background:#ffffff;
+    background-size: cover;
+	background-position:center;
+}
+.largBox{
+	width: 100%;
+    text-align: -webkit-center;
+	padding:20px;
+}
+.oneButton{
+    text-transform: none;
+	--background: #ED2224 !important;
+    --color: #ffffff !important;
+    --border-radius: 7px;
+    --padding: 0px;
+    height: 44px;
+    width: 50%;
+}
+.oneButton.activated{
+	--background: #ED2224 !important;
+	padding:0px;
+}
+ion-item{
+	--background:var(--ion-color-inputFormColor);
+	background-color:#ffffff;
+   --ion-background-color:var(--ion-color-inputFormColor);
+   --inner-padding-start:0px;
+   border-radius:10px;
+   --border-radius:10px;
+   --padding-bottom:0px;
+   border:1px solid #e9e9ea;
+}
+ion-input{
+		--placeholder-color:#b6b6b5;
+	--placeholder-opacity:1;
+	--padding-top:10px;
+	color:#000000;
+	font-size:15px;
+	border-radius:0px;
+	--border-radius:0px;
+	font-family:auto;
+}
+ion-select {
+		--placeholder-color:#b6b6b5;
+	--placeholder-opacity:1;
+	--padding-top:14px;
+	color:#000000;
+	width:100%;
+	font-size:13px;
+}

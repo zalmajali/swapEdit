@@ -1,0 +1,34 @@
+<ion-content>
+<div style="padding-top:33px" (click)="functionOpenMenue()"><img src="../../assets/imgs/Group871.png" style="width:28px"></div>
+    <div style="margin-top:80px; text-align:center">
+    	<img style="width:125px;" src="../../assets/imgs/Group.png" >
+    </div>
+    <div class="firstTitle fontSize20 fontweight1">
+    	{{activationAccount}}
+    </div>
+<div style="padding-top:50px">
+	<form style="display: contents;" (ngSubmit)="activation()">
+        <div class="paddingBottom">
+            <ion-item lines="none" class="{{errorActiveNumber}}" style="direction:rtl">
+                <ion-input class="classCopyAr"  type="text" [(ngModel)]="activeCode" [ngModelOptions]="{standalone: true}" placeholder="{{placeHolderActivationAccount}}" (ionInput)="checkActiveNumber($event)"></ion-input>
+               	<span class="class962" *ngIf='showButton==0'>
+					{{reSendActivationAccount}}
+                </span>
+                <span class="class962" *ngIf='showButton==1' style="color:#ED2224" (click)="reSend()">
+					{{reSendActivationAccount}}
+                </span>
+            </ion-item>
+            <div class="errorTitle" *ngIf="isErrorActiveNumber == 0">{{errorActivationAccount}}</div>
+        </div> 
+        <div class="reSendCode" style="font-family:auto" *ngIf='startTime==1'>
+        	{{tryActivationAccount}} {{counter}} {{secund}}
+        </div>
+        <div>
+          <div class="divButtonClass">
+            <ion-button class="oneButton fontSize18" (click)="activation()" id="submit" disabled="{{!isdisabled}}"><span style="font-size:15px;padding-top:4px">{{confirmed}}</span></ion-button>
+          </div>
+        </div>
+        <button style="visibility:hidden" id="submit" ion-button type="submit" ></button>
+        </form>
+	</div>
+</ion-content>

@@ -1,0 +1,71 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar class="headerToolbar">
+    <ion-title>
+        <div class="palanceText"> {{balanceServse}} </div>
+        <div class="palancePoints">{{points}}</div>
+        
+    </ion-title>
+    <ion-buttons slot="start">
+       <div (click)="functionOpenMenue()" style="padding-left:3px;padding-right:3px"><img src="../../assets/imgs/Group871.png" style="width:28px"></div>
+       <div (click)="functionPushNotifications()" style="padding-right:12px;padding-left:12px"><img src="../../assets/imgs/alert.png" style="width:17px"></div>
+       <ion-badge *ngIf="newNotifications!=0" class="{{classValData}}" slot="start" mode='ios'>{{newNotifications}}</ion-badge>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+    <div style="padding:20px">
+       <div *ngIf="questions!=0">
+       	<div style="padding-bottom:15px; font-size:23px;color:#000000">{{frequentlyQuestions}}</div>
+           <div *ngFor="let items of returnQuestionsArray;let i = index" style="margin-bottom:10px">
+            <ion-card class="titleCard" (click)="functionshowValuse(i)">
+                <div>
+                    <div class="titleDiv"><ion-icon name="{{items.icon}}" class="more"></ion-icon> <span style="vertical-align:top;font-size:14px;">{{items.question}}</span></div>
+                </div>
+            </ion-card>
+            <ion-card class="titleSubCard" *ngIf="items.show == 1">
+                <div>
+                    <div class="titleSubDiv">{{items.answer}}</div>
+                </div>
+            </ion-card>
+           </div>
+       </div>
+        <div class="divEmptyVal" *ngIf="questions==0">
+            <div>
+                <img src="../../assets/imgs/noData.png" style="width:150px; height:150px">
+            </div>
+            <div class="emptyFirstText">
+               {{noDataTitle}}
+            </div>
+            <div class="emptyLastText">
+                {{noDataSubTitle}}
+            </div>
+        </div>
+    </div>
+</ion-content>
+<div class="menueValues"><img (click)="functionGoToSendPoint()" src="../../assets/imgs/sendPoint.png" style="width:70px"></div>
+   <ion-footer class="ion-no-border">
+        <ion-toolbar class="footerToolbar">
+            <div class="width100">
+                <div class="menueClass" [ngStyle]="{'float': floatD}" (click)="functionGoToHome()" >
+                    <div><img src="../../assets/imgs/Group862.png" style="width:20px"></div>
+                     <div class="labelClass">{{menuOne}}</div>
+                </div>
+                <div class="menueClass" [ngStyle]="{'float': floatD}" (click)="functionGoInvitations()" >
+                    <div><img src="../../assets/imgs/Group863.png" style="width:18px"></div>
+                    <div class="labelClass">{{menuTow}}</div>
+                </div>
+                <div class="menueClass" [ngStyle]="{'float': floatD}" (click)="functionGoToSendPoint()" >
+                    <div style="height:28px"></div>
+                    <div class="labelClass" style="font-size:15px">{{menuThree}}</div>
+                </div>
+                <div class="menueClass" [ngStyle]="{'float': floatD}" (click)="functionGoToArchives()" >
+                    <div><img src="../../assets/imgs/Group865.png" style="width:18px"></div>
+                    <div class="labelClass">{{menuFor}}</div>
+                </div>
+                <div class="menueClass" [ngStyle]="{'float': floatD}" (click)="functionOpenAccount()" >
+                    <div><img src="../../assets/imgs/Group866.png" style="width:18px"></div>
+                   <div class="labelClass">{{menuFive}}</div>
+                </div>
+            </div>
+        </ion-toolbar>
+        </ion-footer>

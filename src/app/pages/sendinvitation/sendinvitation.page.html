@@ -1,0 +1,128 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar class="headerToolbar">
+    <ion-title>
+      <div class="palanceText"> {{balanceServse}} </div>
+        <div class="palancePoints">{{points}}</div>
+        
+    </ion-title>
+    <ion-buttons slot="start">
+       <div (click)="functionOpenMenue()" style="padding-left:3px;padding-right:3px"><img src="../../assets/imgs/Group871.png" style="width:28px"></div>
+       <div (click)="functionPushNotifications()" style="padding-right:12px;padding-left:12px"><img src="../../assets/imgs/alert.png" style="width:17px"></div>
+       <ion-badge *ngIf="newNotifications!=0" class="{{classValData}}" slot="start" mode='ios'>{{newNotifications}}</ion-badge>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+    <div style="padding-top:20px">
+       	<div class="largTitle">{{inviteFrind}}</div>
+        <div class="smallTitle">{{inviteFrindNot}}</div>
+     	<div style="width:100%">
+            <ion-grid class="classGrid">
+                <ion-row style="padding:0px">
+                    <ion-col style="padding:0px" size="6">
+                        <div class="timeTitle">
+                            {{inviteFrindTime}}
+                        </div>
+                        <div class="timeSubTitle">
+                           {{inviteFrindTimeNote}}
+                        </div>
+                    </ion-col>
+                    <ion-col style="padding:0px; text-align:end" size="6" [ngStyle]="{'direction': dir}">
+                       <div style="width: 100%;height: 50px;padding-right: 8px;padding-left: 8px;">
+                            <div class="hours">
+                                <div class="countHours">{{hours}}</div>
+                                <div class="textTime">{{hourLang}}</div>
+                           </div>
+                           <div class="minutes">
+                                <div class="countMinutes">{{minutes}}</div>
+                                <div class="textTime">{{minutesLang}}</div>
+                           </div>
+                           <div class="seconds">
+                                <div class="countSeconds">{{seconds}}</div>
+                                <div class="textTime">{{secondsLang}}</div>
+                           </div>
+                       </div>
+                       <div class="line" [ngStyle]="{'float': floatTow}">
+                       	<div class="subLine" ></div>
+                       </div>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </div>
+        <div class="divRedColor" style="font-family:auto" *ngIf="invitationTime!=0">
+        	{{inviteFrindChanc}}
+        </div>
+         <div class="notes">
+        	{{inviteFrindChancTow}}
+        </div>
+        <div style="padding-top: 22px;">
+            <ion-item lines="none">
+            	<span class="codeVal" [ngStyle]="{'direction': dir}">
+					{{code}}:
+                </span>
+                <ion-input class="classCopyAr" type="text" [(ngModel)]="invitationCode" [ngModelOptions]="{standalone: true}" readonly='true'></ion-input>
+               	<span class="class962" (click)="copyCodeVal()">
+					{{copyCode}}
+                </span>
+            </ion-item>
+        </div>
+       	<div style="font-size: 20px; text-align: center; padding-top: 30px;">{{invitBy}}</div>
+        <div style="padding-top: 22px; width: 100%;">
+            <div style="width:100%">
+                <ion-grid style="padding:0px;">
+                    <ion-row style="padding:0px">
+                        <ion-col style="padding:0px" size="2">
+                        </ion-col>
+                        <ion-col style="padding:0px; text-align:center" size="8">
+                             <ion-grid>
+                                <ion-row style="padding:0px">
+                                    <ion-col style="padding:5px" size="4" (click)="functionshareValuseFacebook()">
+                                    	<div><img src="../../assets/imgs/faceBook.png" style="width:50px"></div>
+                                        <div class="sendMsg">Facebook</div>
+                                    </ion-col>
+                                    <ion-col style="padding:5px" size="4"  (click)="functionshareValuseSMS()">
+                                    	<div><img src="../../assets/imgs/message.png" style="width:50px"></div>
+                                        <div class="sendMsg">SMS</div>
+                                    </ion-col>
+                                    <ion-col style="padding:5px" size="4"  (click)="functionshareValuseWhatsapp()">
+                                    	<div><img src="../../assets/imgs/whatsa.png" style="width:50px"></div>
+                                        <div class="sendMsg">Whatsapp</div>
+                                    </ion-col>
+                                </ion-row>
+                            </ion-grid>
+                        </ion-col>
+                        <ion-col style="padding:0px" size="2">
+                        </ion-col>
+                    </ion-row>
+                </ion-grid>
+            </div>
+        </div>
+    </div>
+</ion-content>
+ <div class="menueValues"><img (click)="functionGoToSendPoint()" src="../../assets/imgs/sendPoint.png" style="width:70px"></div>
+        <ion-footer class="ion-no-border">
+        <ion-toolbar class="footerToolbar">
+            <div class="width100">
+                <div class="menueClass" [ngStyle]="{'float': floatD}" (click)="functionGoToHome()">
+                    <div><img src="../../assets/imgs/Group862.png" style="width:20px"></div>
+                     <div class="labelClass">{{menuOne}}</div>
+                </div>
+                <div class="menueClass" [ngStyle]="{'float': floatD}" (click)="functionGoInvitations()">
+                    <div><img src="../../assets/imgs/Group863.png" style="width:18px"></div>
+                    <div class="labelClass">{{menuTow}}</div>
+                </div>
+                <div class="menueClass" [ngStyle]="{'float': floatD}" (click)="functionGoToSendPoint()">
+                    <div style="height:28px"></div>
+                    <div class="labelClass" style="font-size:15px">{{menuThree}}</div>
+                </div>
+                <div class="menueClass" [ngStyle]="{'float': floatD}" (click)="functionGoToArchives()">
+                    <div><img src="../../assets/imgs/Group865.png" style="width:18px"></div>
+                    <div class="labelClass">{{menuFor}}</div>
+                </div>
+                <div class="menueClass" [ngStyle]="{'float': floatD}" (click)="functionOpenAccount()">
+                    <div><img src="../../assets/imgs/Group866.png" style="width:18px"></div>
+                   <div class="labelClass">{{menuFive}}</div>
+                </div>
+            </div>
+        </ion-toolbar>
+        </ion-footer>

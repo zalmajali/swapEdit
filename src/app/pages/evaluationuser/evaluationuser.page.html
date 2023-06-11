@@ -1,0 +1,190 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar class="headerToolbar">
+    <ion-title>
+        <div class="palanceText"> {{balanceServse}} </div>
+        <div class="palancePoints">{{points}}</div>
+        
+    </ion-title>
+    <ion-buttons slot="start">
+       <div (click)="functionOpenMenue()" style="padding-left:3px;padding-right:3px"><img src="../../assets/imgs/Group871.png" style="width:28px"></div>
+       <div (click)="functionPushNotifications()" style="padding-right:12px;padding-left:12px"><img src="../../assets/imgs/alert.png" style="width:17px"></div>
+       <ion-badge *ngIf="newNotifications!=0" class="{{classValData}}" slot="start" mode='ios'>{{newNotifications}}</ion-badge>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+    <div style="padding:20px">
+    	<div style="padding-bottom:0px">
+                <ion-grid>
+                    <ion-row>
+                        <ion-col size="6" (click)="functionChangeType(1)">
+                            <ion-card class="{{selectClassOne}}">
+                                <div class="selectImage" [ngStyle]="{'float': floatD}">
+                                    <img src="../../assets/imgs/greenCheck.png" style="width:20px" *ngIf="typeWork==1">
+                                    <img src="../../assets/imgs/boxImagegrey.png" style="width:20px" *ngIf="typeWork==2">
+                                </div>
+                                <div class="workType" [ngStyle]="{'float': floatD}">
+                                    {{evaluation}}
+                                </div>
+                            </ion-card>
+                        </ion-col>
+                         <ion-col size="6" (click)="functionChangeType(2)">
+                            <ion-card class="{{selectClassTow}}">
+                                <div class="selectImage" [ngStyle]="{'float': floatD}">
+                                    <img src="../../assets/imgs/greenCheck.png" style="width:20px" *ngIf="typeWork==2">
+                                    <img src="../../assets/imgs/boxImagegrey.png" style="width:20px" *ngIf="typeWork==1">
+                                </div>
+                                <div class="workType" [ngStyle]="{'float': floatD}">
+                                    {{reviews}}
+                                </div>
+                            </ion-card>
+                        </ion-col>
+                    </ion-row>
+                </ion-grid>
+            </div>
+    	<div style="padding-bottom:50px;" *ngIf="typeWork==1">
+            <div style="padding-bottom:15px; font-size:23px;color:#000000">{{evaluationuser}}</div>
+            <div class="paddingBottom">
+                <ion-item lines="none">
+                    <div style="margin: 11px 11px 10px 11px;"><img src="{{personalImage}}" style="width: 50px;border-radius: 100%;height: 50px;"></div>
+                    <div style="height:50px">
+                        <div style="font-size:12px; color:#000000">{{serviceProvider}}</div>
+                        <div style="font-size:18px; color:#000000; padding-top:5px">{{commercialName}}</div>
+                    </div>
+                </ion-item>
+            </div>
+            <div>
+                 <div class="starClassRate">
+                    <div class="starRate" >
+                      <div class="starBackRateN" [ngStyle]="{'direction': dir}">
+                         <div class="starcoverRate">
+                          <img #val51 src="assets/imgs/starRate.png" (click)="functionNumRateStore(5,1)" class="imageRate"/>
+                          <img #val41 src="assets/imgs/starRate.png" (click)="functionNumRateStore(4,1)" class="imageRate"/>
+                          <img #val31 src="assets/imgs/starRate.png" (click)="functionNumRateStore(3,1)" class="imageRate"/>
+                          <img #val21 src="assets/imgs/starRate.png" (click)="functionNumRateStore(2,1)" class="imageRate"/>
+                          <img #val11 src="assets/imgs/starRate.png" (click)="functionNumRateStore(1,1)" class="imageRate"/>
+                         </div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div style="padding-bottom:15px; padding-top:10px">
+               <form style="display: contents;" (ngSubmit)="saveAndBack()">
+                <div class="paddingBottom">
+                    <ion-item lines="none">
+                        <ion-textarea rows="5" [(ngModel)]="evalDetails" [ngModelOptions]="{standalone: true}" placeholder="{{evaluationPlacholder}}" (ionInput)="checkevalDetails($event)"></ion-textarea>
+                    </ion-item>
+                </div>
+                <div>
+                  <div class="divButtonClass">
+                    <ion-button class="oneButton fontSize18" (click)="saveAndBack()" id="submit" disabled="{{!isdisabled}}"><span style="font-size:15px;padding-top:4px">{{evaluation}}</span></ion-button>
+                  </div>
+                </div>
+                <button style="visibility:hidden" (click)="saveAndBack()" id="submit" ion-button type="submit" ></button>
+                </form>
+           </div>
+            <div style="padding-bottom:15px; font-size:15px;color:#000000;text-align:center" (click)="functionGoToServ()">{{cancel}}</div>
+       </div>
+       <div style="padding-bottom:50px;" *ngIf="typeWork==2">
+       		<div class="storesBox" style="min-height:1px;border-radius: 8px; border:0px">
+                <div class="storesSubBox" style="min-height:80px">
+                    <div class="storesImageDiv" [ngStyle]="{'float': floatD}" style="padding-top:5px">
+                         <img src="{{personalImage}}" class="storesImage" style="border-radius:5px">
+                    </div>
+                    <div style="vertical-align: top; padding-top: 11px;">
+                        <div>
+                            <div style="color:#000000; font-size:12px">{{serviceProvider}}</div>
+                            <div class="storesSubCatLabel" style="font-size:17px">{{commercialName}}</div>
+                            <div style="text-align:end">
+                               <div class="starLabel" style="width: 100px; position: absolute;">
+                                <div class="star">
+                                  <div class="{{starBackRat}}" [ngStyle]="{'width': countOfAllRate}">
+                                     <div class="starcover" [ngStyle]="{'float': floatD}">
+                                      <img src="../../assets/imgs/starImage.png" style="width:15px; height:15px;max-width:15px"/>
+                                      <img src="../../assets/imgs/starImage.png" style="width:15px; height:15px;max-width:15px"/>
+                                      <img src="../../assets/imgs/starImage.png" style="width:15px; height:15px;max-width:15px"/>
+                                      <img src="../../assets/imgs/starImage.png" style="width:15px; height:15px;max-width:15px"/>
+                                      <img src="../../assets/imgs/starImage.png" style="width:15px; height:15px;max-width:15px"/>
+                                     </div>
+                                  </div>
+                                </div>
+                            </div>
+                         </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+       		<div *ngIf="rates!=0">
+           <div *ngFor="let items of returnProRateArray;let i = index">
+                <div class="storesBox">
+                    <div class="storesSubBox">
+                        <div class="storesImageDiv" [ngStyle]="{'float': floatD}">
+                             <img src="{{items.image}}" class="storesImage">
+                        </div>
+                        <div style="vertical-align: top; padding-top: 11px;">
+                            <div>
+                                <div class="storesName">{{items.fullName}}</div>
+                                <div class="storesSubCatLabel" style="font-family: initial;">{{items.date}}</div>
+                                <div class="storesTypeLabel">{{items.details}}</div>
+                                <div style="text-align:end">
+       							   <div class="starLabel" style="width: 100px; position: absolute;">
+                                    <div class="star">
+                                      <div class="{{starBackRat}}" [ngStyle]="{'width':items.countOfRate}">
+                                         <div class="starcover" [ngStyle]="{'float': floatD}">
+                                          <img src="../../assets/imgs/starImage.png" style="width:15px; height:15px;max-width:15px"/>
+                                          <img src="../../assets/imgs/starImage.png" style="width:15px; height:15px;max-width:15px"/>
+                                          <img src="../../assets/imgs/starImage.png" style="width:15px; height:15px;max-width:15px"/>
+                                          <img src="../../assets/imgs/starImage.png" style="width:15px; height:15px;max-width:15px"/>
+                                          <img src="../../assets/imgs/starImage.png" style="width:15px; height:15px;max-width:15px"/>
+                                         </div>
+                                      </div>
+                                    </div>
+                                </div>
+                             </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+           </div>
+       </div>
+        <div class="divEmptyVal" *ngIf="rates==0">
+            <div>
+                <img src="../../assets/imgs/noData.png" style="width:150px; height:150px">
+            </div>
+            <div class="emptyFirstText">
+               {{noDataTitle}}
+            </div>
+            <div class="emptyLastText">
+                {{noDataSubTitle}}
+            </div>
+        </div>
+       </div>
+    </div>
+</ion-content>
+  <div class="menueValues"><img (click)="functionGoToSendPoint()" src="../../assets/imgs/sendPoint.png" style="width:70px"></div>
+        <ion-footer class="ion-no-border">
+        <ion-toolbar class="footerToolbar">
+            <div class="width100">
+                <div class="menueClass" [ngStyle]="{'float': floatD}"  (click)="functionGoToHome()">
+                    <div><img src="../../assets/imgs/Group862.png" style="width:20px"></div>
+                     <div class="labelClass">{{menuOne}}</div>
+                </div>
+                <div class="menueClass" [ngStyle]="{'float': floatD}" (click)="functionGoInvitations()">
+                    <div><img src="../../assets/imgs/Group863.png" style="width:18px"></div>
+                    <div class="labelClass">{{menuTow}}</div>
+                </div>
+                <div class="menueClass" [ngStyle]="{'float': floatD}" (click)="functionGoToSendPoint()">
+                    <div style="height:28px"></div>
+                    <div class="labelClass" style="font-size:15px">{{menuThree}}</div>
+                </div>
+                <div class="menueClass" [ngStyle]="{'float': floatD}" (click)="functionGoToArchives()">
+                    <div><img src="../../assets/imgs/Group865.png" style="width:18px"></div>
+                    <div class="labelClass">{{menuFor}}</div>
+                </div>
+                <div class="menueClass" [ngStyle]="{'float': floatD}">
+                    <div><img src="../../assets/imgs/GroupSelect866.png" style="width:18px"></div>
+                   <div class="labelClass">{{menuFive}}</div>
+                </div>
+            </div>
+        </ion-toolbar>
+        </ion-footer>

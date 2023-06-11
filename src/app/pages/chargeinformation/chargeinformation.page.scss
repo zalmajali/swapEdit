@@ -1,0 +1,314 @@
+.headerToolbar{
+	--background: #e9e9ea;
+	--border-width: 0px;
+	--padding-top: 10px;
+	--padding-bottom: 5px;
+	--padding-end: 0px;
+}
+.ios ion-title {
+   position: inherit;
+   width:100%;
+   text-align:center
+}
+toolbar-container{
+	--padding-start:0px
+}
+ion-title {
+   text-align:center;
+   font-size: 17px;
+   font-weight: 600;
+   color: black;
+   margin-top:5px;
+}
+ion-content{
+	--background: var(--ion-color-header);
+	--padding-bottom:100px;
+}
+/*content*/
+.titleCard{
+	background-color:#E5E5E5;
+    margin: 0px;
+    border-radius: 7px;
+	color:#000000;
+	height:40px;
+	box-shadow:rgb(0 0 0 / 20%) 0px 3px 1px -3px, rgb(0 0 0 / 14%) 0px 2px 2px 0px, rgb(0 0 0 / 12%) 0px 1px 5px 0px;
+}
+.titleDiv{
+	padding-top: 10px;
+	width:100%;
+	padding-right:8px;
+	padding-left:8px;
+	font-size:14px;
+}
+.titleSubCard{
+	    background-color: #f4f2f2;
+    margin: 0px;
+    border-bottom-right-radius: 7px;
+    color: #000000;
+    box-shadow: none;
+    position: inherit;
+    border-bottom-left-radius: 7px;
+}
+.titleSubDiv{
+	white-space: pre-line !important;
+	padding-top: 14px;
+    text-align: right;
+    width: 100%;
+    padding-right: 30px;
+    font-size: 14px;
+    padding-left: 30px;
+    padding-bottom: 13px;
+    line-height: 25px;
+}
+.divEmptyVal{
+    text-align: center;
+    padding-top: 200px;
+}
+.emptyFirstText{
+    font-size: 20px;
+    color:#ED2224;
+    padding-bottom: 5px;
+}
+.emptyLastText{
+    font-size: 15px;
+     color:#ED2224;
+}
+/*header*/
+.palanceText{
+	vertical-align: top;
+	background-color:#a19f9e;
+	font-size: 9px;
+	padding: 3px 9px 3px 8px;
+	border-radius: 5px;
+	color:#ffffff;
+	margin-top: 5px;
+	display: inline-block;
+}
+.palancePoints{
+	font-family: emoji;
+	color: #ED2224;
+	vertical-align: top;
+	font-size:23px;
+	display: inline-block;
+	padding: 0px 3px 0px 3px;
+}
+.point{
+	color: #ED2224;
+	vertical-align: top;
+	font-size:11px;
+	display: inline-block;
+}
+.classValDataAr{
+   --background: #ED2224;
+    color: var(--ion-color-wight);
+    position: fixed;
+	font-family: emoji;
+    top: 0px;
+    right: 40px;
+    --padding-top: 4px;
+    --padding-end: 6px;
+    --padding-bottom: 4px;
+    --padding-start: 6px;
+    font-size: 9px;
+    font-weight: bold;
+    z-index: 100;
+}
+.classValDataEn{
+   --background: #ED2224;
+    color: var(--ion-color-wight);
+    position: fixed;
+	font-family: emoji;
+    top: 0px;
+    left: 40px;
+    --padding-top: 4px;
+    --padding-end: 6px;
+    --padding-bottom: 4px;
+    --padding-start: 6px;
+    font-size: 9px;
+    font-weight: bold;
+    z-index: 100;
+}
+/*poxes*/
+.boxBalance{
+	text-align: center;
+	height: 90px;
+	border: 0px solid;
+	background-image:url(../../../assets/imgs/back.png);
+	color: #ffffff;
+	border-radius: 10px;
+	background-position: center;
+	box-shadow: 0px 2px 12px -1px rgba(0,0,0,0.75);
+	-webkit-box-shadow: 0px 2px 12px -1px rgba(0,0,0,0.75);
+	-moz-box-shadow: 0px 2px 12px -1px rgba(0,0,0,0.75);
+	background-color:#000000
+}
+.archiveBoxBalance{
+	text-align: center;
+	margin-top:15px;
+	border: 0px solid;
+	min-height: 140px;
+	background-image:url(../../../assets/imgs/bg-payment-methods.png);
+	color: #ffffff;
+	border-radius: 10px;
+	background-size: cover;
+	background-position: center;
+	box-shadow: 0px 2px 12px -1px rgba(0,0,0,0.75);
+	-webkit-box-shadow: 0px 2px 12px -1px rgba(0,0,0,0.75);
+	-moz-box-shadow: 0px 2px 12px -1px rgba(0,0,0,0.75);
+	background-color: #f79f1e;
+}
+.infoBoxBalance{
+	text-align: center;
+	margin-top:15px;
+	border: 0px solid;
+	min-height: 140px;
+	background-image:url(../../../assets/imgs/bg-card-history.png);
+	color: #ffffff;
+	border-radius: 10px;
+	background-size: cover;
+	background-position: center;
+	box-shadow: 0px 2px 12px -1px rgba(0,0,0,0.75);
+	-webkit-box-shadow: 0px 2px 12px -1px rgba(0,0,0,0.75);
+	-moz-box-shadow: 0px 2px 12px -1px rgba(0,0,0,0.75);
+	background-color: #71e2cd;
+}
+.rechargeButton{
+	text-align: center;
+    background: #ffffff;
+    color: #000000;
+    padding: 5px;
+    font-size: 13px;
+    border-radius: 5px;
+	width:100px;
+}
+.balance{
+	padding:5px 10px 2px 10px;
+	font-family: fantasy; 
+	font-size: 22px;
+}
+/**/
+.balanceTitle{
+	padding:20px 10px 5px 10px;
+	font-size:13px;
+	text-align: start;
+}
+.balanceButtom{
+	padding: 30px 15px 10px 15px;
+	text-align: start;
+}
+.boxPlace{
+	padding-top:15px; 
+	font-size:20px;
+	text-align:start; 
+	padding-right:10px; 
+	padding-left:10px;
+	color:#000000;
+}
+.bpxway{
+	text-align:start; 
+	padding-right:10px; 
+	padding-left:10px;
+	padding-top: 13px; 
+	font-size:14px;
+	color:#000000;
+}
+.boxshowPageOneAr{
+	position:absolute;
+	bottom:5px;
+	left:0px;
+	padding-left:10px;
+	padding-right:10px;
+}
+.boxshowPageOneEn{
+	position:absolute;
+	bottom:5px;
+	right:0px;
+	padding-left:10px;
+	padding-right:10px;
+}
+.boxImage{
+	text-align:end;
+	padding-top:15px; 
+	padding-left:15px; 
+	padding-right:15px
+}
+.boxshowPageTowAr{
+	position:absolute;
+	bottom:5px;
+	left:0px;
+	padding-left:10px;
+	padding-right:10px;
+}
+.boxshowPageTowEn{
+	position:absolute;
+	bottom:5px;
+	right:0px;
+	padding-left:10px;
+	padding-right:10px;
+}
+.iconVal{
+	font-size:25px;
+}
+.subortClass{
+    position: relative;
+    top: 25%;
+    text-align: center;
+}
+.supportNumber{
+	width: 250px;
+    margin: 0px auto;
+    text-align: start;
+	color:#000000
+}
+/*endpxes*/
+/*header*/
+/*menu style*/
+ion-footer{
+	position: fixed;
+    bottom: 0px;
+	border-top: 2px solid #d7d3d7;
+    background: #ebebeb;
+    border-bottom: 2px solid #d7d3d7;
+}
+.menueValues{
+	width:100%;
+	position:fixed;
+	bottom:90px;
+	text-align:center;
+	z-index:10000;
+	height:15px;
+}
+.footerToolbar{
+--background: #e9e9ea;
+--border-width:0px;
+--padding-top:15px;
+--padding-bottom:0px;
+--padding-start:0px;
+--padding-end:0px;
+}
+.menueClass{
+	color:#000000;
+	width:20%;
+	text-align:center;
+	cursor:pointer;
+}
+.menueClassActive{
+	color:#DB4437;
+}
+.labelClass{
+    font-size: 12px !important;
+    margin-bottom: 10px;
+	font-weight: 600;
+}
+ion-badge{
+   --background: #ED2224;
+    color: #ffffff;
+    position: fixed;
+    top: 3px;
+    --padding-top: 5px;
+    --padding-end: 5px;
+    --padding-bottom: 1px;
+    --padding-start: 5px;
+    font-size: 11px;
+}
+/*menu style*/

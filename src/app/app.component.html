@@ -1,0 +1,172 @@
+<ion-app>
+  <ion-split-pane contentId="main-content">
+    <ion-menu contentId="main-content" menuId="first"  type="overlay" side="{{menuDirection}}" class="my-custom-menu">
+      <ion-content>
+        <ion-list id="labels-list">
+          <ion-list-header>
+          <div style="height: 100px;margin-top: 70px;width:100%;text-align:center">
+          	<img slot="end" src="../../assets/imgs/Group.png" style="width: 125px" >
+          </div>
+          </ion-list-header>
+          <div *ngFor="let p of appPagesfirst; let i = index">
+            <ion-menu-toggle auto-hide="false" *ngIf="p.subMenue==0">
+                <ion-item [ngStyle]="{'direction': dir}"  lines="none" (click)="functionGoPage(p.url)" class="menuListItem">
+                	<ion-label><span class="{{styleMenue}}"><img src="{{p.icon}}" style="width: 20px;height:20px" ></span> {{ p.title }}</ion-label>
+                </ion-item>
+            </ion-menu-toggle>
+            <ion-item button [ngStyle]="{'direction': dir}"  lines="none" *ngIf="p.subMenue==1" (click)="functionShowSubMenue(1,arrowValOne)" class="menuListItem">
+            	<ion-label><span class="{{styleMenue}}"><img src="{{p.icon}}" style="width: 20px;height:20px" ></span> {{ p.title }}</ion-label><ion-icon name="{{arrowValSelectedOne}}"></ion-icon>
+            </ion-item>
+            <div *ngIf="showSubOne==1">
+                <ion-menu-toggle auto-hide="false" *ngFor="let sub of p.children; let i = index">
+                	<ion-item [ngStyle]="{'direction': dir}" lines="none" (click)="functionGoPage(sub.url)" class="menuListItem">
+                    <ion-label class="subMenue"><ion-icon name="{{arrowDirection}}" class="iconVal"></ion-icon> {{ sub.title }}</ion-label>
+                    </ion-item>  
+                </ion-menu-toggle>
+            </div>
+          </div>
+        </ion-list>
+        <div style="width:100%;margin-top:50px; text-align:center">
+            <img src="../../assets/imgs/Instagram_white.png" style="width: 40px;max-width:40px" (click)='functionInstagram()'>
+            <img src="../../assets/imgs/Youtube_white.png" style="width: 40px;max-width:40px; margin-right:10px"  (click)='functionYoutupe()'>
+        	<img src="../../assets/imgs/Facebook_white.png" style="width: 40px;max-width:40px; margin-right:10px"  (click)='functionOpenFacebook()'>
+        </div>
+        <div style="width:100%;margin-top:5px; text-align:center;font-size: 21px;color:#000000">
+            swap
+        </div>
+      </ion-content>
+    </ion-menu>
+    <ion-menu contentId="main-content" menuId="last"  type="overlay" side="{{menuDirection}}" (ionDidOpen)="functionOpenAccoun()">
+      <ion-content>
+        <ion-list id="labels-list">
+          <ion-list-header>
+           <div style="height: 175px;margin-top: 6px;width:100%;text-align:center">
+          		<div><img src="{{image}}" style="width: 110px;height:110px;border-radius:100%" ></div>
+                <div class="userName">{{fullName}}</div>
+                <div class="userNameEdit" (click)="functionOpenAccount()">{{editAccount}}</div>
+          </div>
+          </ion-list-header>
+          <div dir="{{dir}}" class="boxBalance">
+          	  <ion-row>
+                <ion-col class="textAlignStart" size="6" style="padding:0px">
+                  <div style="padding:13px 10px 5px 10px;font-size:11px; color:#ffffff">
+                    {{currentBalance}}
+                  </div>
+                  <div class="balance">
+                    {{cardBalance}} {{mony}}
+                  </div>
+                </ion-col>
+                <ion-col class="textAlignEnd" size="6" style="padding:0px">
+                <ion-menu-toggle auto-hide="false" >
+                   <div style="padding: 25px 15px 10px 15px;" (click)="chargeInformation()">
+                   		<div  class="rechargeButton">{{recharge}}</div>
+                   </div>
+                 </ion-menu-toggle>  
+                </ion-col>
+            </ion-row>
+          </div>
+          <div *ngFor="let p of appPagesLast; let i = index">
+          <ion-menu-toggle auto-hide="false" *ngIf="p.subMenue==0">
+            <ion-item [ngStyle]="{'direction': dir}" *ngIf="i != 8" lines="none" (click)="functionGoPage(p.url)" class="menuListItem">
+              <ion-label> <span class="{{styleMenue}}"><img src="{{p.icon}}" style="width: 20px;height:20px" ></span> {{ p.title }}</ion-label>
+            </ion-item>
+             <ion-item [ngStyle]="{'direction': dir}" *ngIf="i == 8" lines="none" (click)="signOut()"  class="menuListItem" >
+              <ion-label><span class="{{styleMenue}}"><img src="{{p.icon}}" style="width: 20px;height:20px" ></span>{{ p.title }}</ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+          <ion-item button [ngStyle]="{'direction': dir}"  lines="none" *ngIf="i != 8 && p.subMenue==1 && p.subMenueShow == 2" (click)="functionShowSubMenue(p.subMenueShow,arrowValtow)" class="menuListItem">
+             <ion-label><span class="{{styleMenue}}"><img src="{{p.icon}}" style="width: 20px;height:20px" ></span> {{ p.title }}</ion-label> <ion-icon name="{{arrowValSelectedtow}}"></ion-icon>
+          </ion-item>
+           <ion-item button [ngStyle]="{'direction': dir}"  lines="none" *ngIf="i != 8 && p.subMenue==1 && p.subMenueShow == 3" (click)="functionShowSubMenue(p.subMenueShow,arrowValthree)" class="menuListItem">
+             <ion-label><span class="{{styleMenue}}"><img src="{{p.icon}}" style="width: 20px;height:20px" ></span> {{ p.title }}</ion-label> <ion-icon name="{{arrowValSelectedthree}}"></ion-icon>
+          </ion-item>
+          <ion-item button [ngStyle]="{'direction': dir}"  lines="none" *ngIf="i != 8 && p.subMenue==1 && p.subMenueShow == 4" (click)="functionShowSubMenue(p.subMenueShow,arrowValfor)" class="menuListItem">
+             <ion-label><span class="{{styleMenue}}"><img src="{{p.icon}}" style="width: 20px;height:20px" ></span> {{ p.title }}</ion-label> <ion-icon name="{{arrowValSelectedfor}}"></ion-icon>
+          </ion-item>
+          
+          <div *ngIf="showSubOne==p.subMenueShow">
+            <ion-menu-toggle auto-hide="false" *ngFor="let sub of p.children; let i = index">
+                <ion-item [ngStyle]="{'direction': dir}" lines="none" (click)="functionGoPage(sub.url)" class="menuListItem">
+                <ion-label class="subMenue"><ion-icon name="{{arrowDirection}}" class="iconVal"></ion-icon> {{ sub.title }}</ion-label>
+                </ion-item>  
+            </ion-menu-toggle>
+         </div>
+        </div>
+        </ion-list>
+        <div style="width:100%;margin-top:50px; text-align:center">
+            <img src="../../assets/imgs/Instagram_white.png" style="width: 40px;max-width:40px" (click)='functionInstagram()'>
+            <img src="../../assets/imgs/Youtube_white.png" style="width: 40px;max-width:40px; margin-right:10px"  (click)='functionYoutupe()'>
+        	<img src="../../assets/imgs/Facebook_white.png" style="width: 40px;max-width:40px; margin-right:10px"  (click)='functionOpenFacebook()'>
+        </div>
+        <div style="width:100%;margin-top:5px; text-align:center;font-size: 21px;color:#000000">
+            swap
+        </div>
+      </ion-content>
+    </ion-menu>
+    <ion-menu contentId="main-content" menuId="third"  type="overlay" side="{{menuDirection}}" (ionDidOpen)="functionOpenAccoun()">
+      <ion-content>
+        <ion-list id="labels-list">
+          <ion-list-header>
+           <div style="height: 175px;margin-top: 6px;width:100%;text-align:center">
+          		<div><img src="{{image}}" style="width: 110px;height:110px;border-radius:100%" ></div>
+                <div class="userName">{{fullName}}</div>
+                <div class="userNameEdit" (click)="functionOpenAccount()">تعديل</div>
+          </div>
+          </ion-list-header>
+          <div dir="{{dir}}" class="boxBalance">
+          	  <ion-row>
+                <ion-col class="textAlignStart" size="6" style="padding:0px">
+                  <div style="padding:13px 10px 5px 10px;font-size:11px; color:#ffffff">
+                    {{currentBalance}}
+                  </div>
+                  <div class="balance">
+                    {{cardBalance}} {{mony}}
+                  </div>
+                </ion-col>
+                <ion-col class="textAlignEnd" size="6" style="padding:0px">
+                <ion-menu-toggle auto-hide="false" >
+                   <div style="padding: 25px 15px 10px 15px;" (click)="chargeInformation()">
+                   		<div  class="rechargeButton">{{recharge}}</div>
+                   </div>
+                 </ion-menu-toggle>  
+                </ion-col>
+            </ion-row>
+          </div>
+          <div *ngFor="let p of appPagesThird; let i = index">
+          <ion-menu-toggle auto-hide="false" *ngIf="p.subMenue==0">
+            <ion-item [ngStyle]="{'direction': dir}" *ngIf="i != 7" lines="none" (click)="functionGoPage(p.url)" class="menuListItem">
+              <ion-label> <span class="{{styleMenue}}"><img src="{{p.icon}}" style="width: 20px;height:20px" ></span> {{ p.title }}</ion-label>
+            </ion-item>
+             <ion-item [ngStyle]="{'direction': dir}" *ngIf="i == 7" lines="none" (click)="signOut()"  class="menuListItem" >
+              <ion-label><span class="{{styleMenue}}"><img src="{{p.icon}}" style="width: 20px;height:20px" ></span>{{ p.title }}</ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+          <ion-item button [ngStyle]="{'direction': dir}"  lines="none" *ngIf="i != 7 && p.subMenue==1 && p.subMenueShow == 2" (click)="functionShowSubMenue(p.subMenueShow,arrowValtow)" class="menuListItem">
+             <ion-label><span class="{{styleMenue}}"><img src="{{p.icon}}" style="width: 20px;height:20px" ></span> {{ p.title }}</ion-label> <ion-icon name="{{arrowValSelectedtow}}"></ion-icon>
+          </ion-item>
+           <ion-item button [ngStyle]="{'direction': dir}"  lines="none" *ngIf="i != 7 && p.subMenue==1 && p.subMenueShow == 3" (click)="functionShowSubMenue(p.subMenueShow,arrowValthree)" class="menuListItem">
+             <ion-label><span class="{{styleMenue}}"><img src="{{p.icon}}" style="width: 20px;height:20px" ></span> {{ p.title }}</ion-label> <ion-icon name="{{arrowValSelectedthree}}"></ion-icon>
+          </ion-item>
+          
+          <div *ngIf="showSubOne==p.subMenueShow">
+            <ion-menu-toggle auto-hide="false" *ngFor="let sub of p.children; let i = index">
+                <ion-item [ngStyle]="{'direction': dir}" lines="none" (click)="functionGoPage(sub.url)" class="menuListItem">
+                <ion-label class="subMenue"><ion-icon name="{{arrowDirection}}" class="iconVal"></ion-icon> {{ sub.title }}</ion-label>
+                </ion-item>  
+            </ion-menu-toggle>
+         </div>
+        </div>
+        </ion-list>
+        <div style="width:100%;margin-top:50px; text-align:center">
+            <img src="../../assets/imgs/Instagram_white.png" style="width: 40px;max-width:40px" (click)='functionInstagram()'>
+            <img src="../../assets/imgs/Youtube_white.png" style="width: 40px;max-width:40px; margin-right:10px"  (click)='functionYoutupe()'>
+        	<img src="../../assets/imgs/Facebook_white.png" style="width: 40px;max-width:40px; margin-right:10px"  (click)='functionOpenFacebook()'>
+        </div>
+        <div style="width:100%;margin-top:5px; text-align:center;font-size: 21px;color:#000000">
+            swap
+        </div>
+      </ion-content>
+    </ion-menu>
+    <ion-router-outlet id="main-content" dir="{{dir}}"></ion-router-outlet>
+  </ion-split-pane>
+</ion-app>

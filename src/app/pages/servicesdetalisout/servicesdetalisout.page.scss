@@ -1,0 +1,244 @@
+.headerToolbar{
+	--background: #e9e9ea;
+	--border-width: 0px;
+	--padding-top: 10px;
+	--padding-bottom: 5px;
+	--padding-end: 0px;
+}
+.ios ion-title {
+   position: inherit;
+   width:100%;
+   text-align:center
+}
+toolbar-container{
+	--padding-start:0px
+}
+ion-title {
+   text-align:center;
+   font-size: 17px;
+   font-weight: 600;
+   color: black;
+   margin-top:5px;
+}
+ion-content{
+	--background: var(--ion-color-header);
+	--padding-bottom:100px;
+}
+/*content*/
+.slideNextDiv{
+	position:absolute;
+	left:15px;
+	font-size:25px;
+	z-index:2;
+	height: 30px;
+	top: 40%;
+}
+.slideNextPrev{
+	position:absolute;
+	right:15px;
+	font-size:25px;
+	z-index:2;
+	height: 30px;
+	top: 40%;
+}
+.pointProLargClass{
+	width:50%; 
+	text-align:start;
+	padding-top: 5px;
+	padding: 10px 8px 0px 8px;
+}
+.pointProClass{
+	font-size:13px;
+	font-weight:bold;
+	color:#ED2224;
+	font-family: emoji;
+}
+.vavAndRateCladd{
+	border-left:1px solid #e9e9ea;
+	border-right:1px solid #e9e9ea;
+	height: 38px;
+	display: inline-block;
+	padding:10px 8px
+}
+.watsabClass{
+	width:50%;
+	text-align:end;
+	padding: 6px 2px 0px 2px;
+}
+.callClass{
+	height:45px;
+	margin-top:5px;
+	font-size:16px;
+	border-radius:7px;
+	padding-top:12px;
+	text-align:center;
+	background-color:#28a74a; 
+	color:#ffffff
+}
+.complaintsClass{
+	border:2px solid #e9e9ea;
+	font-size:16px;
+	height:45px;
+	margin-top:5px;
+	border-radius:7px;
+	padding-top:10px;
+	text-align:center;
+	background-color:#ffffff; 
+	color:#000000
+}
+.complaintsWordClass{
+	width: 100%; 
+	font-size: 14px; 
+	padding-top: 2px;
+	color:#000000
+}
+.titleProClass{
+	white-space: pre-line !important;
+	color:#000000; 
+	font-size:20px; 
+}
+
+.mobileNumber{
+    background-color: #f3f3f3;
+    color: #ffffff;
+    font-size: 13px;
+    border-radius: 15px;
+    position: absolute;
+    bottom: -14px;
+	right: 14px;
+    left: 14px;
+	z-index:100000;
+}
+.oneButton{
+    text-transform: none;
+	--background: #ED2224 !important;
+	--color:#ffffff !important;
+	--border-radius: 10px;
+	--padding:0px;
+	height:50px;
+	width:100%;
+}
+.oneButton.activated{
+	--background: #ED2224 !important;
+	padding:0px;
+}
+.paddingData{
+	    padding-top: 10px;
+    padding-left: 3px;
+    padding-right: 3px;
+}
+.name{
+	font-size: 25px;
+	padding-right: 10px;
+	padding-bottom:3px;
+	color:#000000;
+}
+.catAndSubCat{
+	font-size: 14px;
+	padding-right: 7px;
+	padding-left: 7px;
+	padding-bottom:3px;
+	color:#000000;
+}
+.cityAndRegion{
+	font-size: 14px;
+	padding-right: 10px;
+	padding-bottom:3px;
+	color:#000000;
+}
+.borderTop{
+	border-top:2px solid #a0a09f; 
+	margin-top:25px
+}
+.faveIcon{
+	font-size: 20px;
+	color:#0eae4c
+}
+.evalIcon{
+	font-size: 20px;
+	color:#ffffff;
+	margin-right:5px
+}
+.unfaveIcon{
+	font-size: 20px;
+	color:#ffffff
+}
+.sherIcon{
+	font-size: 20px;
+	color:#ffffff;
+	padding-left:10px
+}
+/*header*/
+.palanceText{
+	vertical-align: top;
+	background-color:#a19f9e;
+	font-size: 9px;
+	padding: 3px 9px 3px 8px;
+	border-radius: 5px;
+	color:#ffffff;
+	margin-top: 5px;
+	display: inline-block;
+}
+.palancePoints{
+	font-family: emoji;
+	color: #ED2224;
+	vertical-align: top;
+	font-size:23px;
+	display: inline-block;
+	padding: 0px 3px 0px 3px;
+}
+.point{
+	color: #ED2224;
+	vertical-align: top;
+	font-size:11px;
+	display: inline-block;
+}
+.classValDataAr{
+   --background: #ED2224;
+    color: var(--ion-color-wight);
+    position: fixed;
+	font-family: emoji;
+    top: 0px;
+    right: 40px;
+    --padding-top: 4px;
+    --padding-end: 6px;
+    --padding-bottom: 4px;
+    --padding-start: 6px;
+    font-size: 9px;
+    font-weight: bold;
+    z-index: 100;
+}
+.classValDataEn{
+   --background: #ED2224;
+    color: var(--ion-color-wight);
+    position: fixed;
+	font-family: emoji;
+    top: 0px;
+    left: 40px;
+    --padding-top: 4px;
+    --padding-end: 6px;
+    --padding-bottom: 4px;
+    --padding-start: 6px;
+    font-size: 9px;
+    font-weight: bold;
+    z-index: 100;
+}
+.storesImageDiv{
+	padding-left:5px;
+	padding-right:5px;
+	display:inline-block;
+}
+.storesName{
+	font-size: 19px;
+    color: #000000;
+    padding-right: 5px;
+	padding-top:5px;
+}
+.storesImage{
+	border-radius: 10px;
+    margin-right: 5px;
+    width: 80px;
+    height: 80px;
+    margin-top: 5px;
+}
+/*header*/
