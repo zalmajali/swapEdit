@@ -33,9 +33,6 @@
         <edit-config file="app/src/main/AndroidManifest.xml" mode="merge" target="/manifest/application/activity" xmlns:android="http://schemas.android.com/apk/res/android">
             <activity android:exported="true" />
         </edit-config>
-        <config-file parent="/manifest" target="app/src/main/AndroidManifest.xml" xmlns:android="http://schemas.android.com/apk/res/android">
-            <uses-permission android:name="android.permission.QUERY_ALL_PACKAGES" />
-        </config-file>
         <resource-file src="resources/android/xml/network_security_config.xml" target="app/src/main/res/xml/network_security_config.xml" />
         <allow-intent href="market:*" />
         <icon density="ldpi" src="resources/android/icon/drawable-ldpi-icon.jpg" />
